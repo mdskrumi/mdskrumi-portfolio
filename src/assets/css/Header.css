@@ -1,0 +1,29 @@
+.header_root {
+  /* align-items: center; */
+  justify-content: space-between;
+  display: flex;
+  padding: 30px 30px;
+}
+.header_root .header_left {
+  align-items: center;
+  display: flex;
+}
+.header_root .header_left img {
+  height: 48px;
+  width: 48px;
+}
+
+.header_root .header_left .header_left_title {
+  font-size: 24px;
+  margin: 0px 0px 0px 0.75vw;
+}
+
+.header_root .header_right ul {
+  align-items: center;
+  display: flex;
+  list-style: none;
+}
+
+.header_root .header_right ul li + li {
+  margin-left: 10px;
+}

@@ -1,0 +1,19 @@
+body {
+  background-color: #0f0f0f;
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+}
+
+img {
+  width: 100%;
+}
+
+.app_wrapper {
+  background-color: #222222;
+  margin: auto;
+  width: 100vw;
+  max-width: 1920px;
+  min-height: 100vh;
+  color: #fff;
+}
