@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/me/static/css/main.31b8430f.css",
+    "main.js": "/me/static/js/main.45f5d962.js",
+    "static/js/787.e90ff17d.chunk.js": "/me/static/js/787.e90ff17d.chunk.js",
+    "static/media/mdskrumi_resume.pdf": "/me/static/media/mdskrumi_resume.04556ecbeab21078c09b.pdf",
+    "static/media/logo.png": "/me/static/media/logo.ff3454bde3483621f80f.png",
+    "index.html": "/me/index.html",
+    "main.31b8430f.css.map": "/me/static/css/main.31b8430f.css.map",
+    "main.45f5d962.js.map": "/me/static/js/main.45f5d962.js.map",
+    "787.e90ff17d.chunk.js.map": "/me/static/js/787.e90ff17d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31b8430f.css",
+    "static/js/main.45f5d962.js"
+  ]
+}
