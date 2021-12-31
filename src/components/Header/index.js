@@ -1,7 +1,18 @@
+// Files
+
+import RESUME from "../../assets/files/mdskrumi_resume.pdf";
+
 // Images
 import ProfileImage from "../../assets/images/logo.png";
 
 const Header = () => {
+  const handleClickOnDownloadResume = () => {
+    const a = document.createElement("a");
+    a.href = `${RESUME}`;
+    a.download = "mdskrumi_resume.pdf";
+    a.click();
+  };
+
   return (
     <div className="header_root">
       <div className="header_left">
@@ -12,10 +23,9 @@ const Header = () => {
       </div>
       <div className="header_right">
         <ul>
-          <li>asd 1</li>
-          <li>asd</li>
-          <li>asd</li>
-          <li>asd n</li>
+          <li>About</li>
+          <li onClick={handleClickOnDownloadResume}>Download Resume</li>
+          <li>Contact Me</li>
         </ul>
       </div>
     </div>

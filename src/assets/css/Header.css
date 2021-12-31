@@ -21,9 +21,44 @@
 .header_root .header_right ul {
   align-items: center;
   display: flex;
+  font-size: 18px;
   list-style: none;
 }
 
 .header_root .header_right ul li + li {
   margin-left: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .header_root {
+    padding: 0px;
+  }
+
+  .header_root .header_left {
+    display: block;
+    text-align: center;
+    width: 100vw;
+  }
+
+  .header_root .header_left .header_left_title {
+    font-size: 24px;
+    margin: 0px;
+  }
+
+  .header_root .header_right {
+    bottom: 0;
+    /* background-color: red; */
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+  }
+
+  .header_root .header_right ul {
+    justify-content: space-around;
+  }
+
+  .header_root .header_right ul li + li {
+    margin: 0px;
+  }
 }
