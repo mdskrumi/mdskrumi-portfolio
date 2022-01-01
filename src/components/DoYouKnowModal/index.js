@@ -41,7 +41,7 @@ const DoYouKnowModal = () => {
     </div>
   ) : (
     <div className="do_you_know_modal_loading">
-      <img src={Loading} />
+      <img src={Loading} alt="laoding" />
     </div>
   );
 };
