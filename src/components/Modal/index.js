@@ -1,20 +1,16 @@
 import ReactDom from "react-dom";
 
-import { useState } from "react";
-
 const Modal = (props) => {
-  console.log("__MODAL_PROPS__: ", props);
+  // console.log("__MODAL_PROPS__: ", props);
 
-  const { children, isModalOpen = true } = props;
-  const [showRemove, setShouldRemove] = useState(false);
+  const { children, isModalOpen, setIsModalOpen } = props;
 
   return (
     isModalOpen &&
-    !showRemove &&
     ReactDom.createPortal(
       <>
         <div
-          onClick={() => setShouldRemove(true)}
+          onClick={() => setIsModalOpen(false)}
           style={{
             position: "fixed",
             top: 0,

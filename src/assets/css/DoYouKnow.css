@@ -8,7 +8,7 @@
   width: 58px;
   -webkit-transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0);
-  filter: drop-shadow(0 0 0.5rem #ffffff);
+  filter: drop-shadow(0 0 1.75rem #ffffff);
 }
 
 .do_you_know:hover {
@@ -19,4 +19,40 @@
   transform: translate(-50%, -50%);
   width: 64px;
   -webkit-transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 1.75rem #9d9d9d);
+}
+
+.do_you_know_modal {
+  align-items: center;
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  font-family: "Lobster", cursive;
+  font-weight: 400;
+
+  justify-content: center;
+  max-height: 80vh;
+  max-width: 80vw;
+  padding: 2px 0px;
+  min-width: 300px;
+  text-align: center;
+  text-shadow: 0px 0px 24px #ffffff, 0px 0px 24px #ffffff, 0px 0px 24px #ffffff;
+  width: 720px;
+}
+
+.do_you_know_modal .title {
+  font-size: 32px;
+}
+.do_you_know_modal .sub_title {
+  font-size: 28px;
+}
+.do_you_know_modal .year_div {
+  font-size: 36px;
+}
+.do_you_know_modal .body {
+  font-size: 24px;
+}
+
+.do_you_know_modal_loading {
+  filter: drop-shadow(0 0 2rem #ffffff);
 }
