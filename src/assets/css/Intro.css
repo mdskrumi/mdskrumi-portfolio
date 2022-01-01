@@ -1,0 +1,5 @@
+.intro__container {
+  display: flex;
+  justify-content: center;
+  background-color: salmon;
+}
