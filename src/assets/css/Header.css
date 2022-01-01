@@ -31,7 +31,7 @@
 
 @media screen and (max-width: 600px) {
   .header_root {
-    padding: 0px;
+    padding: 20px 0px 10px 0px;
   }
 
   .header_root .header_left {
@@ -56,6 +56,8 @@
 
   .header_root .header_right ul {
     justify-content: space-around;
+    margin: 20px 0px;
+    padding: 0px;
   }
 
   .header_root .header_right ul li + li {
