@@ -21,12 +21,12 @@
 .header_root .header_right ul {
   align-items: center;
   display: flex;
-  font-size: 18px;
+  font-size: 20px;
   list-style: none;
 }
 
 .header_root .header_right ul li + li {
-  margin-left: 10px;
+  margin-left: 2.5vw;
 }
 
 @media screen and (max-width: 600px) {

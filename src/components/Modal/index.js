@@ -9,29 +9,8 @@ const Modal = (props) => {
     isModalOpen &&
     ReactDom.createPortal(
       <>
-        <div
-          onClick={() => setIsModalOpen(false)}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            zIndex: 1000,
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-          }}
-        />
-        <div
-          style={{
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            zIndex: 1000,
-          }}
-        >
-          {children}
-        </div>
+        <div className="modal_body" onClick={() => setIsModalOpen(false)} />
+        <div className="modal_content">{children}</div>
       </>,
       document.getElementById("modal")
     )

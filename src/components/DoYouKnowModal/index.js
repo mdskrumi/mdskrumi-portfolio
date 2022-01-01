@@ -32,16 +32,20 @@ const DoYouKnowModal = () => {
     fetchData();
   }, []);
 
-  return knowledge.text ? (
+  return (
     <div className="do_you_know_modal">
-      <div className="title">On This Day</div>
-      <div className="sub_title">In Year</div>
-      <div className="year_div">{knowledge.year}</div>
-      <div className="body">{knowledge.text}</div>
-    </div>
-  ) : (
-    <div className="do_you_know_modal_loading">
-      <img src={Loading} alt="laoding" />
+      {knowledge.text ? (
+        <>
+          <div className="title">On This Day</div>
+          <div className="sub_title">In Year</div>
+          <div className="year_div">{knowledge.year}</div>
+          <div className="body">{knowledge.text}</div>
+        </>
+      ) : (
+        <div className="do_you_know_modal_loading">
+          <img src={Loading} alt="loading" />
+        </div>
+      )}
     </div>
   );
 };

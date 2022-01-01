@@ -27,9 +27,8 @@
   display: flex;
   color: #fff;
   flex-direction: column;
-  font-family: "Lobster", cursive;
+  font-family: "Lobster Two", cursive;
   font-weight: 400;
-
   justify-content: center;
   max-height: 80vh;
   max-width: 80vw;

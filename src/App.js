@@ -8,7 +8,9 @@ import DoYouKnow from "./components/DoYouKnow/index";
 
 // CSS
 import "../src/assets/css/App.css";
+import "../src/assets/css/Modal.css";
 import "../src/assets/css/Header.css";
+import "../src/assets/css/Intro.css";
 import "../src/assets/css/DoYouKnow.css";
 
 function App() {
