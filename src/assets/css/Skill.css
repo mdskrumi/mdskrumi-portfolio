@@ -1,9 +1,28 @@
 .skill_container {
-  padding: 3vh 5vw;
-  /* background-color: red; */
+  margin: auto;
+  padding: 3vw 5vw;
+  width: 70vw;
 }
 
 .skill_container .title {
   text-align: center;
   font-size: 28px;
+}
+
+.skill_contents {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill_content_container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.skill_content_container .image {
+  min-width: 50px;
+  min-height: 50px;
+  width: 150px;
 }
