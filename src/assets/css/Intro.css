@@ -44,8 +44,11 @@
 
 @media screen and (max-width: 600px) {
   .intro__container {
-    display: block;
-    margin: 10px auto 64px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 10px auto 164px auto; */
     text-align: center;
   }
 
@@ -66,6 +69,6 @@
   }
 
   .intro_details .vung_vang {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
