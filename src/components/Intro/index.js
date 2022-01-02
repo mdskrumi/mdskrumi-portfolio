@@ -18,7 +18,6 @@ const Intro = () => {
                   return (
                     <span
                       style={{
-                        color: "#fff",
                         fontSize: "28px",
                       }}
                     >
@@ -41,11 +40,10 @@ const Intro = () => {
         </div>
         <div className="name">Md. Sakibul Alam</div>
         <div className="vung_vang">
-          Eiusmod eu culpa sint ipsum sit pariatur eiusmod. Commodo
-          reprehenderit dolore consequat fugiat nisi. Sunt duis cillum sit minim
-          aliqua adipisicing esse sunt et quis.Eiusmod eu culpa sint ipsum sit
-          pariatur eiusmod. Commodo reprehenderit dolore consequat fugiat nisi.
-          Sunt duis cillum sit minim aliqua adipisicing esse.
+          Ready To face challenges using knowledge, perception, innovation, and
+          Competitive mentality to pursue long term successful career in dynamic
+          and professional environment of any organization through my attitude
+          hard work, dedication, and determination.
         </div>
       </div>
     </div>

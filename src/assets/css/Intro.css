@@ -34,8 +34,10 @@
 
 .intro_details .name {
   font-size: 36px;
+  padding-top: 2px;
 }
 
 .intro_details .vung_vang {
   font-size: 20px;
+  padding-top: 3px;
 }
