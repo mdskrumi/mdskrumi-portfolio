@@ -8,7 +8,7 @@ const SkillContent = (props) => {
       </div>
       <div className="description">
         <div className="title">{title}</div>
-        <div className="details">{details}</div>
+        {/* <div className="details">{details}</div> */}
       </div>
     </div>
   );
