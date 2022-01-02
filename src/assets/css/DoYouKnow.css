@@ -1,23 +1,23 @@
 .do_you_know {
   cursor: pointer;
-  height: 58px;
-  left: 20px;
-  position: absolute;
-  top: 40%;
-  transform: translate(-50%, -50%);
-  width: 58px;
-  -webkit-transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0);
-  filter: drop-shadow(0 0 1.75rem #ffffff);
-}
-
-.do_you_know:hover {
   height: 64px;
   left: 20px;
   position: absolute;
   top: 40%;
   transform: translate(-50%, -50%);
   width: 64px;
+  -webkit-transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0);
+  filter: drop-shadow(0 0 1.75rem #ffffff);
+}
+
+.do_you_know:hover {
+  height: 75px;
+  left: 20px;
+  position: absolute;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: 75px;
   -webkit-transform: translate(-50%, -50%);
   filter: drop-shadow(0 0 1.75rem #9d9d9d);
 }
