@@ -1,0 +1,9 @@
+.skill_container {
+  padding: 3vh 5vw;
+  /* background-color: red; */
+}
+
+.skill_container .title {
+  text-align: center;
+  font-size: 28px;
+}

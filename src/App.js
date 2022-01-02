@@ -12,6 +12,7 @@ import "../src/assets/css/Modal.css";
 import "../src/assets/css/Header.css";
 import "../src/assets/css/Intro.css";
 import "../src/assets/css/DoYouKnow.css";
+import "../src/assets/css/Skill.css";
 
 function App() {
   return (
