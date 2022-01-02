@@ -19,14 +19,48 @@
 
 .skill_content_container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .skill_content_container .image {
-  min-width: 50px;
-  min-height: 50px;
   width: 150px;
   height: 150px;
   margin: 30px 10px;
+}
+
+.skill_content_container .description {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.skill_content_container .description .title {
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .skill_container {
+    margin: auto;
+    padding: 3vw 5vw;
+    width: 70vw;
+  }
+
+  .skill_container .title {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .skill_contents {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skill_content_container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }

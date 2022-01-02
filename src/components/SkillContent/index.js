@@ -1,5 +1,7 @@
+import { Line } from "rc-progress";
+
 const SkillContent = (props) => {
-  const { title, image, details } = props;
+  const { title, image, percent } = props;
 
   return (
     <div className="skill_content_container">
@@ -8,7 +10,13 @@ const SkillContent = (props) => {
       </div>
       <div className="description">
         <div className="title">{title}</div>
-        {/* <div className="details">{details}</div> */}
+        <Line
+          percent={percent}
+          strokeWidth="3"
+          strokeColor="#D3D3D3"
+          trailWidth="1"
+          strokeLinecap="square"
+        />
       </div>
     </div>
   );
