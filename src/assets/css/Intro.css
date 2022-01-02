@@ -41,3 +41,31 @@
   font-size: 20px;
   padding-top: 3px;
 }
+
+@media screen and (max-width: 600px) {
+  .intro__container {
+    display: block;
+    margin: 10px auto 64px auto;
+    text-align: center;
+  }
+
+  .intro_img {
+    filter: brightness(100%);
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .intro_details .designation {
+    font-size: 18px;
+    height: 35px;
+    padding: 15px 0px;
+  }
+
+  .intro_details .name {
+    display: none;
+  }
+
+  .intro_details .vung_vang {
+    font-size: 16px;
+  }
+}

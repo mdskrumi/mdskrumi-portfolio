@@ -23,7 +23,6 @@ const Header = () => {
       </div>
       <div className="header_right">
         <ul>
-          <li>About</li>
           <li onClick={handleClickOnDownloadResume}>Download Resume</li>
           <li>Contact Me</li>
         </ul>

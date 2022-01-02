@@ -11,10 +11,10 @@ const Intro = () => {
       <div className="intro_details">
         <div className="designation">
           <ReactTypingEffect
-            cursor=" "
+            cursor={" "}
             displayTextRenderer={(str, inx) => {
               return str.split("").map((s) => {
-                if (s == s.toUpperCase()) {
+                if (s === s.toUpperCase()) {
                   return (
                     <span
                       style={{

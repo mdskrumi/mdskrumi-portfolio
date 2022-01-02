@@ -21,7 +21,7 @@
 .header_root .header_right ul {
   align-items: center;
   display: flex;
-  font-size: 20px;
+  font-size: 16px;
   list-style: none;
 }
 
@@ -47,7 +47,7 @@
 
   .header_root .header_right {
     bottom: 0;
-    /* background-color: red; */
+    background-color: #222222;
     position: fixed;
     margin: 0px;
     padding: 0px;
