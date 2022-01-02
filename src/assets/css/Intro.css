@@ -44,18 +44,23 @@
 
 @media screen and (max-width: 600px) {
   .intro__container {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    /* margin: 10px auto 164px auto; */
     text-align: center;
   }
 
   .intro_img {
     filter: brightness(100%);
-    overflow: hidden;
+    padding: 0px 10px 0px 10px;
+    max-width: 150px;
+    max-height: 150px;
+    min-width: 100px;
+    min-height: 100px;
     height: 100%;
+    width: 50vw;
+    overflow: hidden;
   }
 
   .intro_details .designation {
@@ -69,6 +74,7 @@
   }
 
   .intro_details .vung_vang {
-    font-size: 14px;
+    font-size: 16px;
+    padding-bottom: 20vw;
   }
 }
