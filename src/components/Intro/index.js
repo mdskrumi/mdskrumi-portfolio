@@ -17,6 +17,7 @@ const Intro = () => {
                 if (s === s.toUpperCase()) {
                   return (
                     <span
+                      key={Math.random() + str + inx}
                       style={{
                         fontSize: "28px",
                       }}

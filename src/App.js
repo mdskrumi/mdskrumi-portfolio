@@ -6,6 +6,9 @@ import Home from "./containers/Home";
 // Custom Component
 import DoYouKnow from "./components/DoYouKnow/index";
 
+// Firebase
+import "./firebase/index";
+
 // CSS
 import "../src/assets/css/App.css";
 import "../src/assets/css/Modal.css";
