@@ -1,12 +1,12 @@
 // Components
 import Header from "../../components/Header";
-import Intro from "../../components/Intro";
+import ContactForm from "../../components/ContactForm";
 
 const ContactMe = () => {
   return (
     <div className="home_container">
       <Header />
-      <Intro />
+      <ContactForm />
     </div>
   );
 };

@@ -9,7 +9,13 @@ const Modal = (props) => {
     isModalOpen &&
     ReactDom.createPortal(
       <>
-        <div className="modal_body" onClick={() => setIsModalOpen(false)} />
+        <div
+          className="modal_body"
+          onClick={() => {
+            setIsModalOpen(false);
+            window.location.reload();
+          }}
+        />
         <div className="modal_content">{children}</div>
       </>,
       document.getElementById("modal")
