@@ -14,7 +14,7 @@ const Home = () => {
     <div className="home_container">
       <Header />
       <Intro />
-      <Skill title={"Skills I Accuired"}>
+      <Skill title={"Skills I Accuire"}>
         <SkillContent title={"React JS"} image={ReactImage} percent={90} />
         <SkillContent title={"Node JS"} image={NodeImage} percent={55} />
         <SkillContent title={"Flutter"} image={FlutterImage} percent={70} />
