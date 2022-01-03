@@ -1,6 +1,7 @@
 .intro__container {
   align-items: center;
   display: flex;
+  cursor: default;
   justify-content: center;
   padding: 3vw 5vw;
   margin: auto;

@@ -11,11 +11,13 @@
 .header_root .header_left img {
   height: 48px;
   width: 48px;
+  cursor: default;
 }
 
 .header_root .header_left .header_left_title {
   font-size: 24px;
   margin: 0px 0px 0px 0.75vw;
+  cursor: pointer;
 }
 
 .header_root .header_right ul {
@@ -23,6 +25,7 @@
   display: flex;
   font-size: 16px;
   list-style: none;
+  cursor: pointer;
 }
 
 .header_root .header_right ul li + li {
