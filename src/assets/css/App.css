@@ -23,11 +23,17 @@ img {
 }
 
 .home_container {
-  padding-bottom: 15vh;
+  padding-bottom: 0vh;
 }
 
 .header_left_title:hover,
 .header_root .header_right ul :hover {
   color: #ffffff;
   text-shadow: 0px 0px 24px #000000, 0px 0px 24px #000000;
+}
+
+@media screen and (max-width: 600px) {
+  .home_container {
+    padding-bottom: 15vh;
+  }
 }
