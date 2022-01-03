@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Container
 import Home from "./containers/Home";
+import ContactMe from "./containers/ContactMe";
 
 // Custom Component
 import DoYouKnow from "./components/DoYouKnow/index";
@@ -24,6 +25,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" caseSensitive={true} element={<Home />} />
+          <Route
+            path="/contact-me"
+            caseSensitive={true}
+            element={<ContactMe />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

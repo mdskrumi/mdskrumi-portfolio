@@ -1,11 +1,16 @@
+import { useNavigate } from "react-router-dom";
 // Files
-
 import RESUME from "../../assets/files/mdskrumi_resume.pdf";
-
 // Images
 import ProfileImage from "../../assets/images/logo.png";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleClickOnContactMe = (path) => {
+    navigate(path);
+  };
+
   const handleClickOnDownloadResume = () => {
     const a = document.createElement("a");
     a.href = `${RESUME}`;
@@ -19,12 +24,19 @@ const Header = () => {
         <div className="header_left_img">
           <img src={ProfileImage} alt="mdskrumi" />
         </div>
-        <div className="header_left_title">Md. Sakibul Alam</div>
+        <div
+          className="header_left_title"
+          onClick={() => handleClickOnContactMe("/")}
+        >
+          Md. Sakibul Alam
+        </div>
       </div>
       <div className="header_right">
         <ul>
           <li onClick={handleClickOnDownloadResume}>Download Resume</li>
-          <li>Contact Me</li>
+          <li onClick={() => handleClickOnContactMe("/contact-me")}>
+            Contact Me
+          </li>
         </ul>
       </div>
     </div>
