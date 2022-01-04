@@ -47,6 +47,10 @@ const ContactForm = () => {
     } else {
       writeContactMeData(fullName, email, phoneNumber, message);
       setIsModalOpen(true);
+      setFullName("");
+      setEmail("");
+      setPhoneNumber("");
+      setMessage("");
     }
   };
 

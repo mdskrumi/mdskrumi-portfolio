@@ -13,7 +13,6 @@ const Modal = (props) => {
           className="modal_body"
           onClick={() => {
             setIsModalOpen(false);
-            window.location.reload();
           }}
         />
         <div className="modal_content">{children}</div>
