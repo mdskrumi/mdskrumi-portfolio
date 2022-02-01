@@ -1,19 +1,17 @@
 // Custom Components
-import Modal from "../Modal";
-import DoYouKnowModal from "../DoYouKnowModal";
+import Modal from '../Modal';
+import DoYouKnowModal from '../DoYouKnowModal';
 
 // Images
-import AE from "../../assets/images/ae.png";
-import { useState } from "react";
+import AE from '../../assets/images/ae.png';
+import { useState } from 'react';
 
 // Files
-import hmAudio from "../../assets/files/hm.mp3";
+import hmAudio from '../../assets/files/hm.mp3';
 
 const DoYouKnow = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const audio = new Audio(hmAudio);
-
   return (
     <>
       {!isModalOpen ? (

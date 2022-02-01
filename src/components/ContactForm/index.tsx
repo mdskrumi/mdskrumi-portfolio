@@ -1,77 +1,77 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from 'react';
 
 // Custom Component
-import Modal from "../Modal";
-import ThankYouModal from "../ThankYouModal";
+import Modal from '../Modal';
+import ThankYouModal from '../ThankYouModal';
 
 // Firebase
-import { writeContactMeData } from "../../firebase";
+import { writeContactMeData } from '../../firebase';
 
 const ContactForm = () => {
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [message, setMessage] = useState("");
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [message, setMessage] = useState('');
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const fn = useRef();
-  const em = useRef();
-  const pn = useRef();
-  const msg = useRef();
+  const fn = useRef<HTMLInputElement>(null);
+  const em = useRef<HTMLInputElement>(null);
+  const pn = useRef<HTMLInputElement>(null);
+  const msg = useRef<HTMLTextAreaElement>(null);
 
   const [maxLengthInd, setMaxLengthInd] = useState({ curr: 0, max: 0 });
 
-  const validateEmail = (email) => {
-    const regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
+  const validateEmail = (email: string) => {
+    const regex = new RegExp('[a-z0-9]+@[a-z]+.[a-z]{2,3}');
     return regex.test(email);
   };
 
   const onSubmitData = () => {
     if (fullName.length <= 0) {
-      fn.current.focus();
-      document.getElementById("contact_name").style.borderBottom =
-        "2px red solid";
+      if (fn.current) fn.current.focus();
+      document.getElementById('contact_name')!.style.borderBottom =
+        '2px red solid';
     } else if (email.length <= 0 || !validateEmail(email)) {
-      em.current.focus();
-      document.getElementById("contact_email").style.borderBottom =
-        "2px red solid";
+      if (em.current) em.current.focus();
+      document.getElementById('contact_email')!.style.borderBottom =
+        '2px red solid';
     } else if (phoneNumber.length <= 0) {
-      pn.current.focus();
-      document.getElementById("contact_phone_number").style.borderBottom =
-        "2px red solid";
+      if (pn.current) pn.current.focus();
+      document.getElementById('contact_phone_number')!.style.borderBottom =
+        '2px red solid';
     } else if (message.length <= 0) {
-      msg.current.focus();
-      document.getElementById("contact_message").style.borderBottom =
-        "2px red solid";
+      if (msg.current) msg.current.focus();
+      document.getElementById('contact_message')!.style.borderBottom =
+        '2px red solid';
     } else {
       writeContactMeData(fullName, email, phoneNumber, message);
       setIsModalOpen(true);
-      setFullName("");
-      setEmail("");
-      setPhoneNumber("");
-      setMessage("");
+      setFullName('');
+      setEmail('');
+      setPhoneNumber('');
+      setMessage('');
     }
   };
 
   useEffect(() => {
-    document.getElementById("contact_name").style.borderBottom =
-      "2px gray solid";
+    document.getElementById('contact_name')!.style.borderBottom =
+      '2px gray solid';
   }, [fullName]);
 
   useEffect(() => {
-    document.getElementById("contact_email").style.borderBottom =
-      "2px gray solid";
+    document.getElementById('contact_email')!.style.borderBottom =
+      '2px gray solid';
   }, [email]);
 
   useEffect(() => {
-    document.getElementById("contact_phone_number").style.borderBottom =
-      "2px gray solid";
+    document.getElementById('contact_phone_number')!.style.borderBottom =
+      '2px gray solid';
   }, [phoneNumber]);
 
   useEffect(() => {
-    document.getElementById("contact_message").style.borderBottom =
-      "2px gray solid";
+    document.getElementById('contact_message')!.style.borderBottom =
+      '2px gray solid';
   }, [message]);
 
   return (
@@ -87,7 +87,7 @@ const ContactForm = () => {
             value={fullName}
             onFocus={() => setMaxLengthInd({ curr: fullName.length, max: 32 })}
             onChange={(e) => {
-              if (e.target.value === "" || e.target.value.length <= 32) {
+              if (e.target.value === '' || e.target.value.length <= 32) {
                 setFullName(e.target.value);
                 setMaxLengthInd({ curr: e.target.value.length, max: 32 });
               }
@@ -102,7 +102,7 @@ const ContactForm = () => {
               value={email}
               onFocus={() => setMaxLengthInd({ curr: email.length, max: 32 })}
               onChange={(e) => {
-                if (e.target.value === "" || e.target.value.length <= 32) {
+                if (e.target.value === '' || e.target.value.length <= 32) {
                   setEmail(e.target.value);
                   setMaxLengthInd({ curr: e.target.value.length, max: 32 });
                 }
@@ -118,7 +118,7 @@ const ContactForm = () => {
                 setMaxLengthInd({ curr: phoneNumber.length, max: 16 })
               }
               onChange={(e) => {
-                if (e.target.value === "" || e.target.value.length <= 16) {
+                if (e.target.value === '' || e.target.value.length <= 16) {
                   setPhoneNumber(e.target.value);
                   setMaxLengthInd({ curr: e.target.value.length, max: 16 });
                 }
@@ -128,12 +128,11 @@ const ContactForm = () => {
           <textarea
             id="contact_message"
             ref={msg}
-            type="text"
             placeholder="Write Your Message"
             value={message}
             onFocus={() => setMaxLengthInd({ curr: message.length, max: 300 })}
             onChange={(e) => {
-              if (e.target.value === "" || e.target.value.length <= 300) {
+              if (e.target.value === '' || e.target.value.length <= 300) {
                 setMessage(e.target.value);
                 setMaxLengthInd({ curr: e.target.value.length, max: 300 });
               }

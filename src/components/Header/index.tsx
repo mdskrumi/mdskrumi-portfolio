@@ -1,20 +1,20 @@
-import { useNavigate } from "react-router-dom";
-// Files
-import RESUME from "../../assets/files/mdskrumi_resume.pdf";
-// Images
-import ProfileImage from "../../assets/images/logo.png";
+import { useNavigate } from 'react-router-dom';
+// Files;
+import RESUME from '../../assets/files/mdskrumi_resume.pdf';
+// Images;
+import ProfileImage from '../../assets/images/logo.png';
 
 const Header = () => {
   const navigate = useNavigate();
 
-  const handleClickOnContactMe = (path) => {
+  const handleClickOnContactMe = (path: string) => {
     navigate(path);
   };
 
   const handleClickOnDownloadResume = () => {
-    const a = document.createElement("a");
+    const a: HTMLAnchorElement = document.createElement('a');
     a.href = `${RESUME}`;
-    a.download = "mdskrumi_resume.pdf";
+    a.download = 'mdskrumi_resume.pdf';
     a.click();
   };
 
@@ -26,7 +26,7 @@ const Header = () => {
         </div>
         <div
           className="header_left_title"
-          onClick={() => handleClickOnContactMe("/")}
+          onClick={() => handleClickOnContactMe('/')}
         >
           Md. Sakibul Alam
         </div>
@@ -34,7 +34,7 @@ const Header = () => {
       <div className="header_right">
         <ul>
           <li onClick={handleClickOnDownloadResume}>Download Resume</li>
-          <li onClick={() => handleClickOnContactMe("/contact-me")}>
+          <li onClick={() => handleClickOnContactMe('/contact-me')}>
             Contact Me
           </li>
         </ul>

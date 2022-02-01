@@ -1,5 +1,5 @@
-const Skill = (props) => {
-  const { title = "Default Title", children } = props;
+const Skill = (props: any) => {
+  const { title = 'Default Title', children } = props;
   return (
     <div className="skill_container">
       <div className="title">{title}</div>
