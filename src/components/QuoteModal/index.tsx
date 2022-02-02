@@ -20,27 +20,26 @@ const DoYouKnowModal = () => {
     setImage(response);
   };
 
-  const fetchData = async () => {
-    const response = await fetch(`https://api.quotable.io/random`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }).then((res) => res.json());
-    if (
-      response.author &&
-      response.authorSlug &&
-      response.content &&
-      response.tags
-    ) {
-      setQuoteData(response);
-      await fetchImage(response.authorSlug);
-    } else {
-      console.log('Something went wrong');
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`https://api.quotable.io/random`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).then((res) => res.json());
+      if (
+        response.author &&
+        response.authorSlug &&
+        response.content &&
+        response.tags
+      ) {
+        setQuoteData(response);
+        await fetchImage(response.authorSlug);
+      } else {
+        console.log('Something went wrong');
+      }
+    };
     fetchData();
   }, []);
 
