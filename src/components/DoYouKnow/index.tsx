@@ -1,6 +1,7 @@
 // Custom Components
 import Modal from '../Modal';
 import DoYouKnowModal from '../DoYouKnowModal';
+import QuoteModal from '../QuoteModal';
 
 // Images
 import AE from '../../assets/images/ae.png';
@@ -26,7 +27,11 @@ const DoYouKnow = () => {
         </div>
       ) : null}
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
-        <DoYouKnowModal />
+        {new Date().getSeconds() % 2 === 0 ? (
+          <DoYouKnowModal />
+        ) : (
+          <QuoteModal />
+        )}
       </Modal>
     </>
   );

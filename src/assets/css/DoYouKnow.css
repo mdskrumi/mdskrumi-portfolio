@@ -27,7 +27,7 @@
   display: flex;
   color: #fff;
   flex-direction: column;
-  font-family: "Lobster Two", cursive;
+  font-family: 'Lobster Two', cursive;
   font-weight: 400;
   justify-content: center;
   max-height: 80vh;
@@ -54,4 +54,8 @@
 
 .do_you_know_modal_loading {
   filter: drop-shadow(0 0 2rem #ffffff);
+}
+
+.quote_image {
+  max-width: 50vw;
 }
