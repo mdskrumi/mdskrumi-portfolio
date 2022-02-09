@@ -38,12 +38,26 @@
   padding-top: 2px;
 }
 
-.intro_details .vung_vang {
+.intro_details .description {
   font-size: 20px;
   padding-top: 3px;
 }
 
-@media screen and (max-width: 600px) {
+.intro__actions {
+  display: flex;
+  padding-top: 30px;
+}
+
+.intro__actions div {
+  width: 200px;
+  text-align: left;
+}
+
+.intro__actions div + div {
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 768px) {
   .intro__container {
     align-items: center;
     display: flex;
@@ -75,7 +89,25 @@
     display: none;
   }
 
-  .intro_details .vung_vang {
+  .intro_details .description {
     font-size: 18px;
+    max-width: 80vw;
+    margin: auto;
+  }
+
+  .intro__actions {
+    display: flex;
+    padding: 40px 0px;
+    justify-content: center;
+  }
+
+  .intro__actions div {
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .intro__actions div + div {
+    margin-left: 0px;
   }
 }
