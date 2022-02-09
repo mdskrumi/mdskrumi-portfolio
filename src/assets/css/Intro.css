@@ -51,10 +51,7 @@
 .intro__actions div {
   width: 200px;
   text-align: left;
-}
-
-.intro__actions div + div {
-  margin-left: 40px;
+  font-size: 24px;
 }
 
 @media screen and (max-width: 768px) {

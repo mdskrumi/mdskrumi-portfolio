@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import ReactTypingEffect from "react-typing-effect";
 
 // Images
-import Loading from '../../assets/images/loading.gif';
+import Loading from "../../assets/images/loading.gif";
 
 const DoYouKnowModal = () => {
   const [quoteData, setQuoteData] = useState({
@@ -10,11 +11,11 @@ const DoYouKnowModal = () => {
     content: null,
   });
 
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState("");
 
   const fetchImage = async (name: string) => {
     const response = await fetch(`https://robohash.org/${name}`, {
-      method: 'GET',
+      method: "GET",
     }).then((res) => res.url);
 
     setImage(response);
@@ -23,9 +24,9 @@ const DoYouKnowModal = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(`https://api.quotable.io/random`, {
-        method: 'GET',
+        method: "GET",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       }).then((res) => res.json());
       if (
@@ -37,7 +38,7 @@ const DoYouKnowModal = () => {
         setQuoteData(response);
         await fetchImage(response.authorSlug);
       } else {
-        console.log('Something went wrong');
+        console.log("Something went wrong");
       }
     };
     fetchData();
@@ -53,7 +54,17 @@ const DoYouKnowModal = () => {
             ) : null}
           </div>
           <div className="year_div">{quoteData.author}</div>
-          <div className="body">{quoteData.content}</div>
+          <div className="body">
+            {quoteData.content ? (
+              <ReactTypingEffect
+                text={`"${quoteData.content}"`}
+                cursor={" "}
+                speed={100}
+                typingDelay={0}
+                eraseDelay={100000}
+              />
+            ) : null}
+          </div>
         </>
       ) : (
         <div className="do_you_know_modal_loading">

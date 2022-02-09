@@ -27,9 +27,8 @@
   list-style: none;
   cursor: pointer;
 }
-
-.header_root .header_right ul li + li {
-  margin-left: 2.5vw;
+.header_root .header_right ul li {
+  width: 80px;
 }
 
 @media screen and (max-width: 600px) {
@@ -51,8 +50,6 @@
   .header_root .header_right {
     background-color: #222222;
     bottom: 0;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
     filter: drop-shadow(0 0 2.75rem #9d9d9d);
     position: fixed;
     margin: 0px;
@@ -64,6 +61,7 @@
     justify-content: space-around;
     margin: 20px 0px;
     padding: 0px;
+    color: #ffffff;
   }
 
   .header_root .header_right ul li + li {
