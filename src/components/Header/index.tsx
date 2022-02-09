@@ -1,20 +1,20 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 // Files;
-import RESUME from '../../assets/files/mdskrumi_resume.pdf';
+import RESUME from "../../assets/files/mdskrumi_resume.pdf";
 // Images;
-import ProfileImage from '../../assets/images/logo.png';
+import ProfileImage from "../../assets/images/logo.png";
 
 const Header = () => {
   const navigate = useNavigate();
 
-  const handleClickOnContactMe = (path: string) => {
+  const handleClickOnLink = (path: string) => {
     navigate(path);
   };
 
   const handleClickOnDownloadResume = () => {
-    const a: HTMLAnchorElement = document.createElement('a');
+    const a: HTMLAnchorElement = document.createElement("a");
     a.href = `${RESUME}`;
-    a.download = 'mdskrumi_resume.pdf';
+    a.download = "mdskrumi_resume.pdf";
     a.click();
   };
 
@@ -26,17 +26,16 @@ const Header = () => {
         </div>
         <div
           className="header_left_title"
-          onClick={() => handleClickOnContactMe('/')}
+          onClick={() => handleClickOnLink("/")}
         >
           Md. Sakibul Alam
         </div>
       </div>
       <div className="header_right">
         <ul>
+          <li onClick={() => handleClickOnLink("/")}>Home</li>
           <li onClick={handleClickOnDownloadResume}>Download Resume</li>
-          <li onClick={() => handleClickOnContactMe('/contact-me')}>
-            Contact Me
-          </li>
+          <li onClick={() => handleClickOnLink("/contact-me")}>Contact Me</li>
         </ul>
       </div>
     </div>
