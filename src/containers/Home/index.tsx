@@ -1,5 +1,5 @@
-// import { useEffect, useRef } from "react";
-// import gsap from "gsap";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 // Components
 import Header from "../../components/Header";
@@ -14,15 +14,14 @@ import NodeImage from "../../assets/images/nodejs.png";
 import NextImage from "../../assets/images/nextjs.png";
 
 const Home = () => {
-  // const homeContainerRef = useRef<HTMLDivElement>(null);
-  // const q = gsap.utils.selector(homeContainerRef);
+  const homeContainerRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   gsap.timeline().from(homeContainerRef.current, { x: -window.screen.width });
-  // }, []);
+  useEffect(() => {
+    gsap.timeline().from(homeContainerRef.current, { x: -window.screen.width });
+  }, []);
 
   return (
-    <div className="home_container">
+    <div className="home_container" ref={homeContainerRef}>
       <Header />
       <Intro />
       <Skill title={"Skills I Accuire"}>

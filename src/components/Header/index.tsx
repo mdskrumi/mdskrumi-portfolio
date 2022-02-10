@@ -20,7 +20,7 @@ const Header = () => {
           className="header_left_title"
           onClick={() => handleClickOnLink("/")}
         >
-          Md. Sakibul Alam
+          Md. Sakibul Alam + Hafsa
         </div>
       </div>
       <div className="header_right">

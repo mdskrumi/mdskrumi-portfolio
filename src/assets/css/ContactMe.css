@@ -23,7 +23,7 @@
   width: 100%;
 }
 
-textarea[type='text'] {
+textarea[type="text"] {
   height: 10vh;
   max-height: 400px;
   width: 80%;
@@ -31,18 +31,18 @@ textarea[type='text'] {
   resize: none;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='tel'],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
 textarea {
   text-align: center;
-  background-color: #222222;
+  background-color: transparent;
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
   color: #ffffff;
   font-size: 24px;
-  font-family: 'Lobster Two', cursive;
+  font-family: "Lobster Two", cursive;
   padding: 20px;
   margin: 10px;
   outline: none;
@@ -85,7 +85,7 @@ textarea {
     width: 100%;
   }
 
-  textarea[type='text'] {
+  textarea[type="text"] {
     height: 10vh;
     max-height: 280px;
     width: 70%;
@@ -93,21 +93,12 @@ textarea {
     resize: none;
   }
 
-  input[type='text'],
-  input[type='email'],
-  input[type='tel'],
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
   textarea {
-    background-color: #222222;
-    border-top: hidden;
-    border-left: hidden;
-    border-right: hidden;
-    color: #ffffff;
     font-size: 16px;
-    font-family: 'Lobster Two', cursive;
     margin: 10px 5px;
-    outline: none;
     padding: 10px 0px;
-    text-align: center;
-    width: 100%;
   }
 }

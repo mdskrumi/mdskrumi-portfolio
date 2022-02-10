@@ -48,23 +48,6 @@
   }
 
   .header_root .header_right {
-    background-color: #222222;
-    bottom: 0;
-    filter: drop-shadow(0 0 2.75rem #9d9d9d);
-    position: fixed;
-    margin: 0px;
-    padding: 0px;
-    width: 100vw;
-  }
-
-  .header_root .header_right ul {
-    justify-content: space-around;
-    margin: 20px 0px;
-    padding: 0px;
-    color: #ffffff;
-  }
-
-  .header_root .header_right ul li + li {
-    margin: 0px;
+    display: none;
   }
 }

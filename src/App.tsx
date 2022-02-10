@@ -8,6 +8,7 @@ import ContactMe from "./containers/ContactMe";
 // Custom Component
 import DoYouKnow from "./components/DoYouKnow/index";
 import SplashScreen from "./components/SplashScreen/index";
+import BottomTabBar from "./components/BottomTabBar/index";
 
 // Firebase
 import "./firebase/index";
@@ -17,6 +18,7 @@ import "../src/assets/css/App.css";
 import "../src/assets/css/SplashScreen.css";
 import "../src/assets/css/Modal.css";
 import "../src/assets/css/Header.css";
+import "../src/assets/css/BottomTabBar.css";
 import "../src/assets/css/Intro.css";
 import "../src/assets/css/DoYouKnow.css";
 import "../src/assets/css/Skill.css";
@@ -51,6 +53,7 @@ function App() {
                 element={<ContactMe />}
               />
             </Routes>
+            <BottomTabBar />
           </BrowserRouter>
         </div>
       )}
