@@ -9,6 +9,7 @@
   -webkit-transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0);
   filter: drop-shadow(0 0 1.75rem #ffffff);
+  z-index: 10;
 }
 
 .do_you_know:hover {

@@ -43,7 +43,7 @@ function App() {
         <SplashScreen />
       ) : (
         <div className="app_wrapper">
-          {showedSplashScreen === "showed" && <DoYouKnow />}
+          <DoYouKnow />
           <BrowserRouter>
             <Routes>
               <Route path="/" caseSensitive={true} element={<Home />} />
