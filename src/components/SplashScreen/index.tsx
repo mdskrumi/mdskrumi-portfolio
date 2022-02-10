@@ -14,23 +14,20 @@ const SplashScreen = () => {
       .timeline()
       .to(q(".img"), {
         x: window.screen.width / 2,
-        duration: 2,
+        duration: 1.5,
         ease: "elastic.out(0.2, 0.1)",
       })
       .to(q(".img"), {
         x: window.screen.width / 2 - 50,
-        duration: 1,
+        duration: 0.75,
       })
       .to(q(".img"), {
         rotate: 180,
-        duration: 1,
+        duration: 0.5,
       })
-      .to(q(".img"), {
+      .to(p.current, {
         y: window.screen.height,
         duration: 0.75,
-      })
-      .to(q("splash__screen"), {
-        height: "0px",
       });
   }, [q]);
 

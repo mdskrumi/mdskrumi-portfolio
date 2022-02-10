@@ -1,3 +1,6 @@
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+
 // Components
 import Header from "../../components/Header";
 import Intro from "../../components/Intro";
@@ -11,6 +14,13 @@ import NodeImage from "../../assets/images/nodejs.png";
 import NextImage from "../../assets/images/nextjs.png";
 
 const Home = () => {
+  // const homeContainerRef = useRef<HTMLDivElement>(null);
+  // const q = gsap.utils.selector(homeContainerRef);
+
+  // useEffect(() => {
+  //   gsap.timeline().from(homeContainerRef.current, { x: -window.screen.width });
+  // }, []);
+
   return (
     <div className="home_container">
       <Header />

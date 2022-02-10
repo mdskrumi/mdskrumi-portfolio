@@ -31,26 +31,29 @@ function App() {
     const timer = setTimeout(() => {
       sessionStorage.setItem("splash", "showed");
       setShowedSplashScreen("showed");
-    }, 5000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, [showedSplashScreen]);
 
   return (
     <>
-      {showedSplashScreen !== "showed" && <SplashScreen />}
-      <div className="app_wrapper">
-        {showedSplashScreen === "showed" && <DoYouKnow />}
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" caseSensitive={true} element={<Home />} />
-            <Route
-              path="/contact-me"
-              caseSensitive={true}
-              element={<ContactMe />}
-            />
-          </Routes>
-        </BrowserRouter>
-      </div>
+      {showedSplashScreen !== "showed" ? (
+        <SplashScreen />
+      ) : (
+        <div className="app_wrapper">
+          {showedSplashScreen === "showed" && <DoYouKnow />}
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" caseSensitive={true} element={<Home />} />
+              <Route
+                path="/contact-me"
+                caseSensitive={true}
+                element={<ContactMe />}
+              />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      )}
     </>
   );
 }
