@@ -7,12 +7,14 @@ import ContactMe from "./containers/ContactMe";
 
 // Custom Component
 import DoYouKnow from "./components/DoYouKnow/index";
+import SplashScreen from "./components/SplashScreen/index";
 
 // Firebase
 import "./firebase/index";
 
 // CSS
 import "../src/assets/css/App.css";
+import "../src/assets/css/SplashScreen.css";
 import "../src/assets/css/Modal.css";
 import "../src/assets/css/Header.css";
 import "../src/assets/css/Intro.css";
@@ -29,29 +31,15 @@ function App() {
     const timer = setTimeout(() => {
       sessionStorage.setItem("splash", "showed");
       setShowedSplashScreen("showed");
-    }, 2000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, [showedSplashScreen]);
 
   return (
     <>
-      {showedSplashScreen !== "showed" && (
-        <div
-          style={{
-            backgroundColor: "red",
-            width: "100vw",
-            height: "100vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            fontSize: "48px",
-          }}
-        >
-          Loading
-        </div>
-      )}
+      {showedSplashScreen !== "showed" && <SplashScreen />}
       <div className="app_wrapper">
-        <DoYouKnow />
+        {showedSplashScreen === "showed" && <DoYouKnow />}
         <BrowserRouter>
           <Routes>
             <Route path="/" caseSensitive={true} element={<Home />} />

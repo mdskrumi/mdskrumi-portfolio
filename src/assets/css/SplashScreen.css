@@ -1,0 +1,12 @@
+.splash__screen {
+  align-items: center;
+  display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
+  justify-content: flex-start;
+}
+
+.img {
+  height: 100px;
+  width: 100px;
+}
