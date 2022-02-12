@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+// Contexts
+import InfoContext from "../../contexts/info";
 
 // Custom Components
 import Modal from "../Modal";
@@ -12,6 +15,7 @@ import ReactTypingEffect from "react-typing-effect";
 import ProfileImage from "../../assets/images/profile_image.jpg";
 
 const Intro = () => {
+  const infoContext = useContext(InfoContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClickOnDownloadResume = () => {
@@ -33,24 +37,16 @@ const Intro = () => {
               cursor={" "}
               eraseSpeed={100}
               speed={100}
-              text={[
-                "Software Engineer",
-                "Web Frontend Engineer",
-                "Competitive Programmer",
-              ]}
+              text={
+                infoContext?.infoData.designations
+                  ? infoContext?.infoData.designations
+                  : "Software Engineer"
+              }
               typingDelay={1000}
             />
           </div>
-          <div className="name">Md. Sakibul Alam</div>
-          <div className="description">
-            With more than 2 years of experience in web frontend engineering, I
-            have built websites and applications used by millions of users every
-            day. I am also ready To face challenges using knowledge, perception,
-            innovation, and Competitive mentality to pursue a long-term
-            successful career in the dynamic and professional environment of any
-            organization through my attitude hard work, dedication, and
-            determination.
-          </div>
+          <div className="name"> {infoContext?.infoData.name}</div>
+          <div className="description">{infoContext?.infoData.intro}</div>
 
           <div className="intro__actions">
             <div className="button" onClick={handleClickOnDownloadResume}>

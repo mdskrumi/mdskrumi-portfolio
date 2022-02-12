@@ -1,9 +1,14 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
+// Contexts
+import InfoContext from "../../contexts/info";
 
 // Images;
 import ProfileImage from "../../assets/images/logo.png";
 
 const Header = () => {
+  const infoContext = useContext(InfoContext);
   const navigate = useNavigate();
 
   const handleClickOnLink = (path: string) => {
@@ -20,7 +25,7 @@ const Header = () => {
           className="header_left_title"
           onClick={() => handleClickOnLink("/")}
         >
-          Md. Sakibul Alam + Hafsa
+          {infoContext?.infoData.name}
         </div>
       </div>
       <div className="header_right">
