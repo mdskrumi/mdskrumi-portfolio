@@ -53,7 +53,7 @@ function App() {
 
   return (
     <>
-      {showedSplashScreen !== "showed" ? (
+      {true || showedSplashScreen !== "showed" ? (
         <SplashScreen />
       ) : (
         <div className="app_wrapper">
