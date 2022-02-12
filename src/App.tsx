@@ -1,5 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ref, onValue } from "firebase/database";
+
+// Context
+import InfoContext from // InfoContextInterface, // InfoDataInterface,
+"./contexts/info";
 
 // Container
 import Home from "./containers/Home";
@@ -11,7 +16,7 @@ import SplashScreen from "./components/SplashScreen/index";
 import BottomTabBar from "./components/BottomTabBar/index";
 
 // Firebase
-import "./firebase/index";
+import { database } from "./firebase/index";
 
 // CSS
 import "../src/assets/css/App.css";
@@ -25,6 +30,7 @@ import "../src/assets/css/Skill.css";
 import "../src/assets/css/ContactMe.css";
 
 function App() {
+  const infoContext = useContext(InfoContext);
   const [showedSplashScreen, setShowedSplashScreen] = useState(
     sessionStorage.getItem("splash") || "not showed"
   );
@@ -36,6 +42,15 @@ function App() {
     }, 3000);
     return () => clearTimeout(timer);
   }, [showedSplashScreen]);
+
+  useEffect(() => {
+    const infoRef = ref(database, "info/");
+    onValue(infoRef, (snapshot) => {
+      const data = snapshot.val();
+      infoContext?.setInfoData(data);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
