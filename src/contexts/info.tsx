@@ -24,8 +24,6 @@ export const InfoProvider = ({ children }: any) => {
     ],
   });
 
-  console.log(infoData);
-
   return (
     <InfoContext.Provider value={{ infoData, setInfoData }}>
       {children}

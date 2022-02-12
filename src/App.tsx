@@ -3,8 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ref, onValue } from "firebase/database";
 
 // Context
-import InfoContext from // InfoContextInterface, // InfoDataInterface,
-"./contexts/info";
+import InfoContext from "./contexts/info";
 
 // Container
 import Home from "./containers/Home";
