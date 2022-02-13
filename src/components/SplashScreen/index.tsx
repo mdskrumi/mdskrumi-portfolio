@@ -14,8 +14,8 @@ export interface SplashScreenProps {
 
 const SplashScreen = ({ duration }: SplashScreenProps) => {
   const [messages, setMessages] = useState<string[]>();
-  const p = useRef<HTMLParagraphElement>(null);
-  const q = gsap.utils.selector(p);
+  const divRef = useRef<HTMLDivElement>(null);
+  const q = gsap.utils.selector(divRef);
   const width = Math.min(window.screen.availWidth, window.screen.availHeight);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const SplashScreen = ({ duration }: SplashScreenProps) => {
           opacity: 1,
         }
       )
-      .to(p.current, {
+      .to(divRef.current, {
         opacity: 0,
         duration: duration / 1000,
       });
@@ -63,7 +63,7 @@ const SplashScreen = ({ duration }: SplashScreenProps) => {
   }, [width, q]);
 
   return (
-    <div className="splash__screen" ref={p}>
+    <div className="splash__screen" ref={divRef}>
       <img className="splash__screen_img" src={ProfileImage} alt="Profile" />
       <div className="splash__screen__msg">
         <div className="splash__screen__msg__1">
