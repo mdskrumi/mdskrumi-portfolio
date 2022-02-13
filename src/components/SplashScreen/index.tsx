@@ -1,21 +1,44 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { ref, onValue } from "firebase/database";
+
+// Firebase
+import { database } from "../../firebase/index";
 
 // Images;
 import ProfileImage from "../../assets/images/logo.png";
 
-const SplashScreen = () => {
+export interface SplashScreenProps {
+  duration: number;
+}
+
+const SplashScreen = ({ duration }: SplashScreenProps) => {
+  const [messages, setMessages] = useState<string[]>();
   const p = useRef<HTMLParagraphElement>(null);
   const q = gsap.utils.selector(p);
   const width = Math.min(window.screen.availWidth, window.screen.availHeight);
 
   useEffect(() => {
-    // Target ALL descendants with the class of .box
-    gsap.timeline().to(q(".splash__screen__msg__5"), {
-      x: window.screen.width / 2,
-      duration: 2.5,
+    const splashMessagesRef = ref(database, "splash-messages/");
+    onValue(splashMessagesRef, (snapshot) => {
+      const data = snapshot.val();
+      setMessages(data);
     });
-  }, [q]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    gsap
+      .timeline()
+      .to(q(".splash__screen__msg__5"), {
+        x: window.screen.width / 1.75,
+        duration: 2.5,
+      })
+      .to(p.current, {
+        opacity: 0,
+        duration: duration / 1000,
+      });
+  }, [q, duration]);
 
   useEffect(() => {
     gsap.timeline().fromTo(
@@ -32,18 +55,28 @@ const SplashScreen = () => {
         duration: 2,
       }
     );
-  }, []);
+  }, [width, q]);
 
   return (
     <div className="splash__screen" ref={p}>
       <img className="splash__screen_img" src={ProfileImage} alt="Profile" />
       <div className="splash__screen__msg">
-        <div className="splash__screen__msg__1">Subhanallah</div>
-        <div className="splash__screen__msg__2">Alhamdulillah</div>
-        <div className="splash__screen__msg__3">La ilaha illallahu</div>
-        <div className="splash__screen__msg__4">Allahu Akbar</div>
+        <div className="splash__screen__msg__1">
+          {messages ? messages[0] : null}
+        </div>
+        <div className="splash__screen__msg__2">
+          {messages ? messages[1] : null}
+        </div>
+        <div className="splash__screen__msg__3">
+          {messages ? messages[2] : null}
+        </div>
+        <div className="splash__screen__msg__4">
+          {messages ? messages[3] : null}
+        </div>
       </div>
-      <div className="splash__screen__msg__5">Allahu</div>
+      <div className="splash__screen__msg__5">
+        {messages ? messages[4] : null}
+      </div>
     </div>
   );
 };

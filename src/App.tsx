@@ -33,14 +33,24 @@ function App() {
   const [showedSplashScreen, setShowedSplashScreen] = useState(
     sessionStorage.getItem("splash") || "not showed"
   );
+  const [splashScreenDuration, setSplashScreenDuration] =
+    useState<number>(3500);
+
+  useEffect(() => {
+    const splashDurationRef = ref(database, "splash-duration/");
+    onValue(splashDurationRef, (snapshot) => {
+      const data = snapshot.val();
+      setSplashScreenDuration(data);
+    });
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       sessionStorage.setItem("splash", "showed");
       setShowedSplashScreen("showed");
-    }, 3000);
+    }, splashScreenDuration + 2500);
     return () => clearTimeout(timer);
-  }, [showedSplashScreen]);
+  }, [showedSplashScreen, splashScreenDuration]);
 
   useEffect(() => {
     const infoRef = ref(database, "info/");
@@ -54,7 +64,7 @@ function App() {
   return (
     <>
       {showedSplashScreen !== "showed" ? (
-        <SplashScreen />
+        <SplashScreen duration={splashScreenDuration} />
       ) : (
         <div className="app_wrapper">
           <DoYouKnow />
