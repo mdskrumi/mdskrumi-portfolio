@@ -25,9 +25,11 @@
 
 .splash__screen__msg div:nth-child(odd) {
   margin-left: -10%;
+  text-align: left;
 }
 .splash__screen__msg div:nth-child(even) {
   margin-left: 10%;
+  text-align: right;
 }
 .splash__screen__msg__5 {
   width: 100vw;
