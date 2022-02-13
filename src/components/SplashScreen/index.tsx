@@ -30,10 +30,15 @@ const SplashScreen = ({ duration }: SplashScreenProps) => {
   useEffect(() => {
     gsap
       .timeline()
-      .to(q(".splash__screen__msg__5"), {
-        x: window.screen.width / 1.75,
-        duration: 2.5,
-      })
+      .fromTo(
+        q(".splash__screen__msg__5"),
+        { opacity: 0 },
+        {
+          x: window.screen.width / 1.75,
+          duration: 2.5,
+          opacity: 1,
+        }
+      )
       .to(p.current, {
         opacity: 0,
         duration: duration / 1000,
@@ -52,7 +57,7 @@ const SplashScreen = ({ duration }: SplashScreenProps) => {
       {
         fontSize: width / 20,
         opacity: 1,
-        duration: 2,
+        duration: 2.5,
       }
     );
   }, [width, q]);
