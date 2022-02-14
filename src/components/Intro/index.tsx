@@ -33,11 +33,11 @@ const Intro = () => {
 
   useEffect(() => {
     gsap.timeline().from(buttonDivRefOne.current, { x: -width, duration: 1 });
-  }, []);
+  }, [width]);
 
   useEffect(() => {
     gsap.timeline().from(buttonDivRefTwo.current, { x: width, duration: 1 });
-  }, []);
+  }, [width]);
 
   return (
     <>

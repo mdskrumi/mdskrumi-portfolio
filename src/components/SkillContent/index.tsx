@@ -13,7 +13,7 @@ const SkillContent = (props: any) => {
     gsap.from(imageDivRef.current, {
       scrollTrigger: {
         trigger: ".skill_container",
-        start: "top center",
+        start: "top 60%",
         end: "+=300",
         scrub: 1,
       },
@@ -23,7 +23,7 @@ const SkillContent = (props: any) => {
     gsap.from(descriptionDivRef.current, {
       scrollTrigger: {
         trigger: ".skill_container",
-        start: "top center",
+        start: "top 60%",
         end: "+=300",
         scrub: 1,
       },
