@@ -5,6 +5,7 @@ import Skill from "../../components/Skill";
 import SkillContent from "../../components/SkillContent";
 import Projects from "../../components/Projects";
 import ProjectItem from "../../components/ProjectItem";
+import LocateMe from "../../components/LocateMe";
 
 // Images
 import ReactImage from "../../assets/images/reactjs.png";
@@ -37,8 +38,18 @@ import BLImage8 from "../../assets/images/bl/bl8.png";
 import BLImage9 from "../../assets/images/bl/bl9.png";
 import BLImage10 from "../../assets/images/bl/bl10.png";
 import BLImage11 from "../../assets/images/bl/bl11.png";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [location, setLocation] = useState<GeolocationPosition>();
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => setLocation(position),
+      (err) => console.log(window.alert(err.message))
+    );
+  }, []);
+
   return (
     <div className="home_container">
       <Header />
@@ -90,6 +101,7 @@ const Home = () => {
           ]}
         />
       </Projects>
+      <LocateMe location={location} />
     </div>
   );
 };
