@@ -10,7 +10,7 @@ interface ProjectItemProps {
 }
 
 const ProjectItem = (props: ProjectItemProps) => {
-  const { title, link, images } = props;
+  const { title, link, images, description, techs } = props;
 
   const [time, setTime] = useState(Date.now());
   const imageRef = useRef<HTMLImageElement>(null);
@@ -43,6 +43,13 @@ const ProjectItem = (props: ProjectItemProps) => {
   return (
     <div className="project_content_container">
       <div className="title">{title}</div>
+      <div className="project_decs">{description}</div>
+      <div className="project_decs project_used_techs">
+        Technologies:{" "}
+        {techs.map((tech, index) => (
+          <>{tech + (index < techs.length - 1 ? ", " : "")}</>
+        ))}
+      </div>
       <div ref={imageRef} className="project_images">
         <div className="project_watch_live">
           <a href={link} target="_blank" rel="noreferrer">

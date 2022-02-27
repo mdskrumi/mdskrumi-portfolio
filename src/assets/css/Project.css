@@ -33,7 +33,6 @@
 
 .project_images {
   width: 100%;
-
   position: relative;
 }
 
@@ -45,7 +44,7 @@
 
 .project_watch_live {
   position: absolute;
-  top: 50%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
@@ -53,6 +52,13 @@
 }
 .project_watch_live a {
   text-decoration: none;
+  color: black;
+  text-shadow: 0px 0px 24px #000000, 0px 0px 24px #000000;
+}
+
+.project_decs {
+  padding: 5px 0px 25px 0px;
+  text-align: justify;
 }
 
 @media screen and (max-width: 800px) {

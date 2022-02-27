@@ -54,8 +54,16 @@ const Home = () => {
         <ProjectItem
           title={"Banglalink Website"}
           link={"https://www.banglalink.net"}
-          description="asd"
-          techs={[]}
+          description="Banglalink Digital Communications Ltd. is a telecommunication service provider in Bangladesh. It's the third-largest cellular service provider in Bangladesh. As of the latest statistics, Banglalink has a subscriber base of 36.90 million.
+          I have developed and maintained the official banglalink website which is used by millions of users everyday. I took part in system analysis and design as well as estimated several client requirements and it’s feasibility."
+          techs={[
+            "React JS",
+            "React-Redux",
+            "Redux Saga",
+            "JQuery",
+            "Webpack",
+            "Google Analytics",
+          ]}
           images={[
             BLImage1,
             BLImage2,
@@ -73,8 +81,20 @@ const Home = () => {
         <ProjectItem
           title={"MyBL Lite PWA"}
           link={"https://mybl.banglalink.net"}
-          description="asd"
-          techs={[]}
+          description="MyBL Lite is a Progressive Web Application (PWA). It’s a clone of the Official MyBL Application with minimum features. It only contains some of the most used features from MyBL Application. MyBL Lite also has Android and IOS versions and can be found on their respective stores. 
+          I was responsible from application planning to deployment. I have built the frontend of the application from scratch as a lead and single developer."
+          techs={[
+            "React JS",
+            "React-Redux",
+            "Redux Saga",
+            "JQuery",
+            "Firebase",
+            "Styled-Component",
+            "React Bootstrap",
+            "JQuery-UI",
+            "Webpack",
+            "Google Analytics",
+          ]}
           images={[
             MyBLLiteImage1,
             MyBLLiteImage2,
