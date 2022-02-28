@@ -13,6 +13,7 @@ import ContactMe from "./containers/ContactMe";
 import DoYouKnow from "./components/DoYouKnow/index";
 import SplashScreen from "./components/SplashScreen/index";
 import BottomTabBar from "./components/BottomTabBar/index";
+import Footer from "./components/Footer";
 
 // Firebase
 import { database } from "./firebase/index";
@@ -28,6 +29,7 @@ import "../src/assets/css/DoYouKnow.css";
 import "../src/assets/css/Skill.css";
 import "../src/assets/css/Project.css";
 import "../src/assets/css/ContactMe.css";
+import "../src/assets/css/Footer.css";
 
 function App() {
   const infoContext = useContext(InfoContext);
@@ -80,6 +82,7 @@ function App() {
             </Routes>
             <BottomTabBar />
           </BrowserRouter>
+          <Footer />
         </div>
       )}
     </>

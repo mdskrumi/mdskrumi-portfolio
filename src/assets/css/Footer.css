@@ -1,0 +1,25 @@
+.footer {
+  cursor: pointer;
+}
+
+.footer_menu_image {
+  background-color: #383838;
+  filter: drop-shadow(0 0 7.5px #ffffff);
+  border-radius: 24px;
+  height: 48px;
+  width: 48px;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+}
+
+@media screen and (max-width: 600px) {
+  .footer_menu_image {
+    border-radius: 16px;
+    height: 32px;
+    width: 32px;
+    position: fixed;
+    bottom: 72px;
+    right: 2%;
+  }
+}
