@@ -2,6 +2,12 @@
   cursor: pointer;
 }
 
+.footer_end {
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+
 .footer_menu_image {
   background-color: #383838;
   filter: drop-shadow(0 0 7.5px #ffffff);
@@ -21,5 +27,11 @@
     position: fixed;
     bottom: 72px;
     right: 2%;
+  }
+  .footer_end {
+    margin-bottom: 60px;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
   }
 }
