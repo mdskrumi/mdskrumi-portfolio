@@ -19,6 +19,10 @@
   right: 2%;
 }
 
+.menu {
+  background-color: #ffffff;
+}
+
 @media screen and (max-width: 600px) {
   .footer_menu_image {
     border-radius: 16px;

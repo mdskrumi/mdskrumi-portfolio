@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ref, onValue } from "firebase/database";
 
@@ -11,7 +11,6 @@ import ContactMe from "./containers/ContactMe";
 
 // Custom Component
 import DoYouKnow from "./components/DoYouKnow/index";
-import SplashScreen from "./components/SplashScreen/index";
 import BottomTabBar from "./components/BottomTabBar/index";
 import Footer from "./components/Footer";
 
@@ -33,27 +32,6 @@ import "../src/assets/css/Footer.css";
 
 function App() {
   const infoContext = useContext(InfoContext);
-  const [showedSplashScreen, setShowedSplashScreen] = useState(
-    sessionStorage.getItem("splash") || "not showed"
-  );
-  const [splashScreenDuration, setSplashScreenDuration] =
-    useState<number>(3500);
-
-  useEffect(() => {
-    const splashDurationRef = ref(database, "splash-duration/");
-    onValue(splashDurationRef, (snapshot) => {
-      const data = snapshot.val();
-      setSplashScreenDuration(data);
-    });
-  }, []);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      sessionStorage.setItem("splash", "showed");
-      setShowedSplashScreen("showed");
-    }, splashScreenDuration + 2500);
-    return () => clearTimeout(timer);
-  }, [showedSplashScreen, splashScreenDuration]);
 
   useEffect(() => {
     const infoRef = ref(database, "info/");
@@ -65,27 +43,21 @@ function App() {
   }, []);
 
   return (
-    <>
-      {showedSplashScreen !== "showed" ? (
-        <SplashScreen duration={splashScreenDuration} />
-      ) : (
-        <div className="app_wrapper">
-          <DoYouKnow />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" caseSensitive={true} element={<Home />} />
-              <Route
-                path="/contact-me"
-                caseSensitive={true}
-                element={<ContactMe />}
-              />
-            </Routes>
-            <BottomTabBar />
-          </BrowserRouter>
-          <Footer />
-        </div>
-      )}
-    </>
+    <div className="app_wrapper">
+      <DoYouKnow />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" caseSensitive={true} element={<Home />} />
+          <Route
+            path="/contact-me"
+            caseSensitive={true}
+            element={<ContactMe />}
+          />
+        </Routes>
+        <BottomTabBar />
+      </BrowserRouter>
+      <Footer />
+    </div>
   );
 }
 

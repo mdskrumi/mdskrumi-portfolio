@@ -1,5 +1,4 @@
-import { useState, useContext, useRef, useEffect } from "react";
-import gsap from "gsap";
+import { useState, useContext } from "react";
 // Contexts
 import InfoContext from "../../contexts/info";
 
@@ -18,12 +17,6 @@ const Intro = () => {
   const infoContext = useContext(InfoContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const imageDivRef = useRef<HTMLDivElement>(null);
-  const buttonDivRefOne = useRef<HTMLDivElement>(null);
-  const buttonDivRefTwo = useRef<HTMLDivElement>(null);
-
-  const width = window.screen.availWidth;
-
   const handleClickOnDownloadResume = () => {
     const a: HTMLAnchorElement = document.createElement("a");
     a.href = `${RESUME}`;
@@ -31,18 +24,10 @@ const Intro = () => {
     a.click();
   };
 
-  useEffect(() => {
-    gsap.timeline().from(buttonDivRefOne.current, { x: -width, duration: 1 });
-  }, [width]);
-
-  useEffect(() => {
-    gsap.timeline().from(buttonDivRefTwo.current, { x: width, duration: 1 });
-  }, [width]);
-
   return (
     <>
       <div className="intro__container">
-        <div className="intro_img" ref={imageDivRef}>
+        <div className="intro_img">
           <img src={ProfileImage} alt="mdskrumi" />
         </div>
         <div className="intro_details">
@@ -63,18 +48,10 @@ const Intro = () => {
           <div className="description">{infoContext?.infoData.intro}</div>
 
           <div className="intro__actions">
-            <div
-              ref={buttonDivRefOne}
-              className="button"
-              onClick={handleClickOnDownloadResume}
-            >
+            <div className="button" onClick={handleClickOnDownloadResume}>
               Download Resume
             </div>
-            <div
-              ref={buttonDivRefTwo}
-              className="button"
-              onClick={() => setIsModalOpen(true)}
-            >
+            <div className="button" onClick={() => setIsModalOpen(true)}>
               Get A Quote
             </div>
           </div>
