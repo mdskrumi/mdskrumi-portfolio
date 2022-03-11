@@ -6,12 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 
 // Context
 import { InfoProvider } from "./contexts/info";
+import { SplashProvider } from "./contexts/splash";
 
 ReactDOM.render(
   <React.StrictMode>
-    <InfoProvider>
-      <App />
-    </InfoProvider>
+    <SplashProvider>
+      <InfoProvider>
+        <App />
+      </InfoProvider>
+    </SplashProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

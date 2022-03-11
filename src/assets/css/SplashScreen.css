@@ -7,14 +7,10 @@
   width: 100vw;
   color: #ffffff;
 }
-.splash__screen_img {
-  height: 100px;
-  width: 100px;
-  filter: drop-shadow(0 0 2.75rem #ffffff);
-}
 
 .splash__screen__msg {
   padding: 10px;
+  font-size: 48px;
 }
 
 .splash__screen__msg div {
@@ -34,6 +30,8 @@
 .splash__screen__msg__5 {
   width: 100vw;
   text-shadow: 0px 0px 24px #ffffff, 0px 0px 24px #ffffff, 0px 0px 24px #ffffff;
+  text-align: center;
+  font-size: 24px;
 }
 
 .img {
@@ -43,25 +41,40 @@
 }
 
 @media screen and (max-width: 800px) {
-  .img,
-  .splash__screen_img {
+  .img {
     height: 80px;
     width: 80px;
+  }
+  .splash__screen__msg {
+    font-size: 32px;
+  }
+  .splash__screen__msg__5 {
+    font-size: 16px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .img,
-  .splash__screen_img {
+  .img {
     height: 60px;
     width: 60px;
+  }
+  .splash__screen__msg {
+    font-size: 24px;
+  }
+  .splash__screen__msg__5 {
+    font-size: 12px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .img,
-  .splash__screen_img {
+  .img {
     height: 48px;
     width: 48px;
+  }
+  .splash__screen__msg {
+    font-size: 18px;
+  }
+  .splash__screen__msg__5 {
+    font-size: 12px;
   }
 }

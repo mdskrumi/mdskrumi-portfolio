@@ -10,7 +10,7 @@ export interface ThemeContextInterface {
 
 const ThemeContext = React.createContext<ThemeContextInterface | null>(null);
 
-export const InfoProvider = ({ children }: any) => {
+export const ThemeProvider = ({ children }: any) => {
   const [isDarkThemeEnabled, setIsDarkThemeEnabled] = useState<boolean>(
     getCache("isDarkThemeEnabled") || false
   );

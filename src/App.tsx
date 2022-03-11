@@ -4,8 +4,10 @@ import { ref, onValue } from "firebase/database";
 
 // Context
 import InfoContext from "./contexts/info";
+import SplashContext from "./contexts/splash";
 
 // Container
+import SplashScreen from "./containers/SplashScreen";
 import Home from "./containers/Home";
 import ContactMe from "./containers/ContactMe";
 
@@ -32,6 +34,7 @@ import "../src/assets/css/Footer.css";
 
 function App() {
   const infoContext = useContext(InfoContext);
+  const splashContext = useContext(SplashContext);
 
   useEffect(() => {
     const infoRef = ref(database, "info/");
@@ -47,12 +50,18 @@ function App() {
       <DoYouKnow />
       <BrowserRouter>
         <Routes>
-          <Route path="/" caseSensitive={true} element={<Home />} />
-          <Route
-            path="/contact-me"
-            caseSensitive={true}
-            element={<ContactMe />}
-          />
+          {!splashContext?.isSplashShown ? (
+            <Route path="/" caseSensitive={true} element={<SplashScreen />} />
+          ) : (
+            <>
+              <Route path="/" caseSensitive={true} element={<Home />} />
+              <Route
+                path="/contact-me"
+                caseSensitive={true}
+                element={<ContactMe />}
+              />
+            </>
+          )}
         </Routes>
         <BottomTabBar />
       </BrowserRouter>
