@@ -16,9 +16,9 @@ const ProjectItem = (props: ProjectItemProps) => {
       <div className="project_decs">{description}</div>
       <div className="project_decs project_used_techs">
         Technologies:{" "}
-        {techs.map((tech, index) => (
-          <>{tech + (index < techs.length - 1 ? ", " : "")}</>
-        ))}
+        {techs.map(
+          (tech, index) => tech + (index < techs.length - 1 ? ", " : "")
+        )}
       </div>
       <div className="project_images">
         <div className="project_watch_live">

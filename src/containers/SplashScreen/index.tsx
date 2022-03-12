@@ -25,7 +25,6 @@ const SplashScreen = () => {
     onRest: () => {
       sessionStorage.setItem("isSplashShown", "true");
       splashContext?.setIsSplashShown(true);
-      window.location.reload();
     },
   });
 
