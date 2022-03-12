@@ -7,8 +7,8 @@ import useRaise from "../../Hooks/useRaise";
 // Images
 import Menu_Image from "../../assets/images/menu.png";
 import Facebook_Image from "../../assets/images/facebook.png";
-import LinkedIn_Image from "../../assets/images/github.png";
-import GitHub_Image from "../../assets/images/linkedin.png";
+import LinkedIn_Image from "../../assets/images/linkedin.png";
+import GitHub_Image from "../../assets/images/github.png";
 
 const Footer = () => {
   const [style1, toggle1] = useRaise(1, false);
