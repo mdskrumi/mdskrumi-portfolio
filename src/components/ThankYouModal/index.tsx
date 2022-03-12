@@ -1,3 +1,5 @@
+import React from "react";
+
 const ThankYouModal = () => {
   return (
     <div className="do_you_know_modal">
@@ -6,4 +8,4 @@ const ThankYouModal = () => {
     </div>
   );
 };
-export default ThankYouModal;
+export default React.memo(ThankYouModal);

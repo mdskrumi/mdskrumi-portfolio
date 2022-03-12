@@ -1,3 +1,4 @@
+import React from "react";
 // Components
 import Header from "../../components/Header";
 import Intro from "../../components/Intro";
@@ -113,4 +114,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default React.memo(Home);

@@ -1,3 +1,5 @@
+import React from "react";
+
 const Projects = (props: any) => {
   const { title, children } = props;
   return (
@@ -8,4 +10,4 @@ const Projects = (props: any) => {
   );
 };
 
-export default Projects;
+export default React.memo(Projects);

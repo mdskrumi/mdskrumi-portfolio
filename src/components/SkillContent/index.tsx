@@ -1,3 +1,5 @@
+import React from "react";
+
 const SkillContent = (props: any) => {
   const { title, image } = props;
 
@@ -14,4 +16,4 @@ const SkillContent = (props: any) => {
   );
 };
 
-export default SkillContent;
+export default React.memo(SkillContent);

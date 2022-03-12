@@ -1,3 +1,4 @@
+import React from "react";
 // Components
 import Header from "../../components/Header";
 import ContactForm from "../../components/ContactForm";
@@ -10,4 +11,4 @@ const ContactMe = () => {
     </div>
   );
 };
-export default ContactMe;
+export default React.memo(ContactMe);

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import dayjs from 'dayjs';
+import React, { useState, useEffect } from "react";
+import dayjs from "dayjs";
 
 // Images
-import Loading from '../../assets/images/loading.gif';
+import Loading from "../../assets/images/loading.gif";
 
 const DoYouKnowModal = () => {
   const [knowledge, setKnowledge] = useState({
@@ -17,13 +17,13 @@ const DoYouKnowModal = () => {
           dayjs().month() + 1
         }/${dayjs().date()}/date`,
         {
-          method: 'GET',
+          method: "GET",
           headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-            'x-rapidapi-host': 'numbersapi.p.rapidapi.com',
-            'x-rapidapi-key':
-              '5e6f87a148mshaf461c9dc7837fep1a16f9jsne92a47229a3b',
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            "x-rapidapi-host": "numbersapi.p.rapidapi.com",
+            "x-rapidapi-key":
+              "5e6f87a148mshaf461c9dc7837fep1a16f9jsne92a47229a3b",
           },
         }
       ).then((res) => res.json());
@@ -53,4 +53,4 @@ const DoYouKnowModal = () => {
   );
 };
 
-export default DoYouKnowModal;
+export default React.memo(DoYouKnowModal);

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 // Contexts
 import InfoContext from "../../contexts/info";
 
@@ -64,4 +64,4 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+export default React.memo(Intro);

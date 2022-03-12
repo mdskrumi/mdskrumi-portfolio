@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState, useContext } from "react";
 import { ref, onValue } from "firebase/database";
 import { animated, useSpring } from "react-spring";
@@ -18,14 +19,14 @@ const SplashScreen = () => {
   const splashContext = useContext(SplashContext);
 
   const styles = useSpring({
-    // from: { opacity: 1 },
-    // to: { opacity: 0 },
-    // delay: 5000,
-    // onRest: () => {
-    //   sessionStorage.setItem("isSplashShown", "true");
-    //   splashContext?.setIsSplashShown(true);
-    //   window.location.reload();
-    // },
+    from: { opacity: 1 },
+    to: { opacity: 0 },
+    delay: 5000,
+    onRest: () => {
+      sessionStorage.setItem("isSplashShown", "true");
+      splashContext?.setIsSplashShown(true);
+      window.location.reload();
+    },
   });
 
   useEffect(() => {
@@ -68,4 +69,4 @@ const SplashScreen = () => {
   );
 };
 
-export default SplashScreen;
+export default React.memo(SplashScreen);

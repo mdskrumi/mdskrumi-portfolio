@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Contexts
@@ -39,4 +39,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

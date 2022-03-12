@@ -1,3 +1,4 @@
+import React from "react";
 interface ProjectItemProps {
   title: string;
   link: string;
@@ -35,4 +36,4 @@ const ProjectItem = (props: ProjectItemProps) => {
   );
 };
 
-export default ProjectItem;
+export default React.memo(ProjectItem);

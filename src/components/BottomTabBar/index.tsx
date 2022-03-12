@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const BottomTabBar = () => {
@@ -17,4 +18,4 @@ const BottomTabBar = () => {
   );
 };
 
-export default BottomTabBar;
+export default React.memo(BottomTabBar);

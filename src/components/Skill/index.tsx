@@ -1,5 +1,7 @@
+import React from "react";
+
 const Skill = (props: any) => {
-  const { title = 'Default Title', children } = props;
+  const { title = "Default Title", children } = props;
   return (
     <div className="skill_container">
       <div className="title">{title}</div>
@@ -8,4 +10,4 @@ const Skill = (props: any) => {
   );
 };
 
-export default Skill;
+export default React.memo(Skill);

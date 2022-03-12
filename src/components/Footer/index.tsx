@@ -1,3 +1,4 @@
+import React from "react";
 // Images
 import Menu_Image from "../../assets/images/menu.png";
 import Facebook_Image from "../../assets/images/facebook.png";
@@ -39,4 +40,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default React.memo(Footer);

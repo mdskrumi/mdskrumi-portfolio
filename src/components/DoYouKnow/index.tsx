@@ -1,4 +1,6 @@
+import React from "react";
 import { useState } from "react";
+import { useSpring, animated } from "react-spring";
 
 // Custom Components
 import Modal from "../Modal";
@@ -10,17 +12,24 @@ import AE from "../../assets/images/ae.png";
 const DoYouKnow = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const styles = useSpring({
+    from: { x: -100 },
+    to: { x: -25 },
+    delay: 5000,
+  });
+
   return (
     <>
       {!isModalOpen ? (
-        <div
+        <animated.div
+          style={styles}
           className="do_you_know"
           onClick={() => {
             setIsModalOpen(true);
           }}
         >
           <img src={AE} alt="Do You Know?" />
-        </div>
+        </animated.div>
       ) : null}
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
         <DoYouKnowModal />
@@ -29,4 +38,4 @@ const DoYouKnow = () => {
   );
 };
 
-export default DoYouKnow;
+export default React.memo(DoYouKnow);

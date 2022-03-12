@@ -1,3 +1,4 @@
+import React from "react";
 import ReactDom from "react-dom";
 
 const Modal = (props: any) => {
@@ -24,4 +25,4 @@ const Modal = (props: any) => {
     );
 };
 
-export default Modal;
+export default React.memo(Modal);

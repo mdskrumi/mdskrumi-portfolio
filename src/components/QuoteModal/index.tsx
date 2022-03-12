@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ReactTypingEffect from "react-typing-effect";
 
 // Images
@@ -75,4 +75,4 @@ const DoYouKnowModal = () => {
   );
 };
 
-export default DoYouKnowModal;
+export default React.memo(DoYouKnowModal);
