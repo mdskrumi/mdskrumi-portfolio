@@ -13,6 +13,17 @@ import RESUME from "../../assets/files/mdskrumi_resume.pdf";
 import ReactTypingEffect from "react-typing-effect";
 import ProfileImage from "../../assets/images/profile_image.jpg";
 
+// Style
+import {
+  IntroContainerDiv,
+  IntroImageDiv,
+  IntroDetailsDesignationsDiv,
+  IntroDetailsNameDiv,
+  IntroDescriptionDiv,
+  IntroActionsDiv,
+  IntroSingleActionDiv,
+} from "./style";
+
 const Intro = () => {
   const infoContext = useContext(InfoContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,12 +37,12 @@ const Intro = () => {
 
   return (
     <>
-      <div className="intro__container">
-        <div className="intro_img">
+      <IntroContainerDiv>
+        <IntroImageDiv>
           <img src={ProfileImage} alt="mdskrumi" loading="lazy" />
-        </div>
-        <div className="intro_details">
-          <div className="designation">
+        </IntroImageDiv>
+        <div>
+          <IntroDetailsDesignationsDiv>
             <ReactTypingEffect
               cursor={" "}
               eraseSpeed={100}
@@ -43,20 +54,24 @@ const Intro = () => {
               }
               typingDelay={1000}
             />
-          </div>
-          <div className="name"> {infoContext?.infoData.name}</div>
-          <div className="description">{infoContext?.infoData.intro}</div>
+          </IntroDetailsDesignationsDiv>
+          <IntroDetailsNameDiv>
+            {infoContext?.infoData.name}
+          </IntroDetailsNameDiv>
+          <IntroDescriptionDiv>
+            {infoContext?.infoData.intro}
+          </IntroDescriptionDiv>
 
-          <div className="intro__actions">
-            <div className="button" onClick={handleClickOnDownloadResume}>
+          <IntroActionsDiv>
+            <IntroSingleActionDiv onClick={handleClickOnDownloadResume}>
               Download Resume
-            </div>
-            <div className="button" onClick={() => setIsModalOpen(true)}>
+            </IntroSingleActionDiv>
+            <IntroSingleActionDiv onClick={() => setIsModalOpen(true)}>
               Get A Quote
-            </div>
-          </div>
+            </IntroSingleActionDiv>
+          </IntroActionsDiv>
         </div>
-      </div>
+      </IntroContainerDiv>
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
         <QuoteModal />
       </Modal>
