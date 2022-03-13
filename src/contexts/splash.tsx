@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-// Helpers
-import { getCache } from "../utils/storage";
-
 export interface SplashContextInterface {
   isSplashShown: boolean;
   setIsSplashShown: Function;

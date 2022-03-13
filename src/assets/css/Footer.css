@@ -25,9 +25,9 @@
 
 @media screen and (max-width: 600px) {
   .footer_menu_image {
-    border-radius: 16px;
-    height: 32px;
-    width: 32px;
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
     position: fixed;
     bottom: 72px;
     right: 2%;

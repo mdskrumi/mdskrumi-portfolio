@@ -61,3 +61,27 @@
   width: 30vw;
   max-width: 180px;
 }
+
+@media screen and (max-width: 800px) {
+  .do_you_know {
+    height: 56px;
+    left: 20px;
+    width: 56px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .do_you_know {
+    height: 48px;
+    left: 20px;
+    width: 48px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .do_you_know {
+    height: 44px;
+    left: 20px;
+    width: 44px;
+  }
+}

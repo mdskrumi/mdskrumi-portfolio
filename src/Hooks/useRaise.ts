@@ -7,7 +7,7 @@ const useRaise = (stackedOn: number, isRaised: boolean) => {
 
   const style = useSpring({
     to: {
-      y: raised ? -(stackedOn * (window.screen.width <= 600 ? 40 : 60)) : 0,
+      y: raised ? -(stackedOn * (window.screen.width <= 600 ? 48 : 60)) : 0,
       config: { ...config.molasses, duration: 1000 },
     },
   });
