@@ -19,6 +19,9 @@ import Footer from "./components/Footer";
 // Firebase
 import { database } from "./firebase/index";
 
+// Styles
+import { AppWrapper } from "./GlobalStyle";
+
 // CSS
 import "../src/assets/css/App.css";
 import "../src/assets/css/SplashScreen.css";
@@ -46,7 +49,7 @@ function App() {
   }, []);
 
   return (
-    <div className="app_wrapper">
+    <AppWrapper>
       <DoYouKnow />
       <BrowserRouter>
         <Routes>
@@ -66,7 +69,7 @@ function App() {
         <BottomTabBar />
       </BrowserRouter>
       <Footer />
-    </div>
+    </AppWrapper>
   );
 }
 
