@@ -30,3 +30,8 @@
     padding-bottom: 15vh;
   }
 }
+
+.quote_image {
+  width: 30vw;
+  max-width: 180px;
+}

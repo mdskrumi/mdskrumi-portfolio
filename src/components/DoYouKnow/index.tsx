@@ -9,6 +9,9 @@ import DoYouKnowModal from "../DoYouKnowModal";
 // Images
 import AE from "../../assets/images/ae.png";
 
+// Styles
+import { DoYouKnowDiv } from "./style";
+
 const DoYouKnow = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -21,15 +24,15 @@ const DoYouKnow = () => {
   return (
     <>
       {!isModalOpen ? (
-        <animated.div
+        <DoYouKnowDiv
+          as={animated.div}
           style={styles}
-          className="do_you_know"
           onClick={() => {
             setIsModalOpen(true);
           }}
         >
           <img src={AE} alt="Do You Know?" loading="lazy" />
-        </animated.div>
+        </DoYouKnowDiv>
       ) : null}
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
         <DoYouKnowModal />

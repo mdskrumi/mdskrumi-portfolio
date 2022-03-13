@@ -4,6 +4,16 @@ import dayjs from "dayjs";
 // Images
 import Loading from "../../assets/images/loading.gif";
 
+// Styles
+import {
+  DoYouKnowModalDiv,
+  TitleDiv,
+  SubTitleDiv,
+  YearDiv,
+  BodyDiv,
+  ModalLoadingDiv,
+} from "./style";
+
 const DoYouKnowModal = () => {
   const [knowledge, setKnowledge] = useState({
     text: null,
@@ -36,20 +46,20 @@ const DoYouKnowModal = () => {
   }, []);
 
   return (
-    <div className="do_you_know_modal">
+    <DoYouKnowModalDiv>
       {knowledge.text ? (
         <>
-          <div className="title">On This Day</div>
-          <div className="sub_title">In Year</div>
-          <div className="year_div">{knowledge.year}</div>
-          <div className="body">{knowledge.text}</div>
+          <TitleDiv>On This Day</TitleDiv>
+          <SubTitleDiv>In Year</SubTitleDiv>
+          <YearDiv>{knowledge.year}</YearDiv>
+          <BodyDiv>{knowledge.text}</BodyDiv>
         </>
       ) : (
-        <div className="do_you_know_modal_loading">
+        <ModalLoadingDiv>
           <img src={Loading} alt="loading" loading="lazy" />
-        </div>
+        </ModalLoadingDiv>
       )}
-    </div>
+    </DoYouKnowModalDiv>
   );
 };
 

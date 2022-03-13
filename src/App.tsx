@@ -29,7 +29,6 @@ import "../src/assets/css/Modal.css";
 import "../src/assets/css/Header.css";
 import "../src/assets/css/BottomTabBar.css";
 import "../src/assets/css/Intro.css";
-import "../src/assets/css/DoYouKnow.css";
 import "../src/assets/css/Skill.css";
 import "../src/assets/css/Project.css";
 import "../src/assets/css/ContactMe.css";
