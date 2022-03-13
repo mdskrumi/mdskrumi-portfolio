@@ -38,6 +38,7 @@ const Footer = () => {
         className="footer_menu_image facebook"
         src={Facebook_Image}
         alt="facebook"
+        loading="lazy"
         onClick={() => handleItemOnClick("https://www.facebook.com")}
       />
       <animated.img
@@ -45,6 +46,7 @@ const Footer = () => {
         className="footer_menu_image linkedin"
         src={LinkedIn_Image}
         alt="linkedin"
+        loading="lazy"
         onClick={() =>
           // handleItemOnClick("https://www.linkedin.com/in/mdskrumi")
           handleItemOnClick("https://www.linkedin.com/")
@@ -55,12 +57,14 @@ const Footer = () => {
         className="footer_menu_image github"
         src={GitHub_Image}
         alt="github"
+        loading="lazy"
         onClick={() => handleItemOnClick("https://github.com/mdskrumi")}
       />
       <img
         className="footer_menu_image menu"
         src={Menu_Image}
         alt="menu"
+        loading="lazy"
         onClick={handleOnMenuClick}
       />
       <div className="custom_hr"></div>

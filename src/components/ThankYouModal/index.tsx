@@ -8,4 +8,4 @@ const ThankYouModal = () => {
     </div>
   );
 };
-export default React.memo(ThankYouModal);
+export default ThankYouModal;

@@ -25,4 +25,4 @@ const Modal = (props: any) => {
     );
 };
 
-export default React.memo(Modal);
+export default Modal;

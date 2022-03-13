@@ -19,7 +19,7 @@ const Header = () => {
     <div className="header_root">
       <div className="header_left">
         <div className="header_left_img">
-          <img src={ProfileImage} alt="mdskrumi" />
+          <img src={ProfileImage} alt="mdskrumi" loading="lazy" />
         </div>
         <div
           className="header_left_title"

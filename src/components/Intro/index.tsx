@@ -28,7 +28,7 @@ const Intro = () => {
     <>
       <div className="intro__container">
         <div className="intro_img">
-          <img src={ProfileImage} alt="mdskrumi" />
+          <img src={ProfileImage} alt="mdskrumi" loading="lazy" />
         </div>
         <div className="intro_details">
           <div className="designation">

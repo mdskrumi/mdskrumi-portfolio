@@ -11,7 +11,6 @@ const BottomTabBar = () => {
     <div className="bottom__tab__bar">
       <ul>
         <li onClick={() => handleClickOnLink("/")}>Home</li>
-
         <li onClick={() => handleClickOnLink("/contact-me")}>Contact Me</li>
       </ul>
     </div>

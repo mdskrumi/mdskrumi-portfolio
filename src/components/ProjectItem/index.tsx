@@ -30,6 +30,7 @@ const ProjectItem = (props: ProjectItemProps) => {
           className={`${title}_project_image_${0}`}
           src={images[0]}
           alt={title}
+          loading="lazy"
         />
       </div>
     </div>

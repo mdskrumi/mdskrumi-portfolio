@@ -28,7 +28,7 @@ const DoYouKnow = () => {
             setIsModalOpen(true);
           }}
         >
-          <img src={AE} alt="Do You Know?" />
+          <img src={AE} alt="Do You Know?" loading="lazy" />
         </animated.div>
       ) : null}
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>

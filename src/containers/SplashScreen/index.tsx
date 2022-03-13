@@ -61,7 +61,7 @@ const SplashScreen = () => {
         </>
       ) : (
         <div>
-          <img src={Loading} alt="loading" />
+          <img src={Loading} alt="loading" loading="lazy" />
         </div>
       )}
     </animated.div>

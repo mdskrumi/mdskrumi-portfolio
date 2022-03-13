@@ -46,11 +46,11 @@ const DoYouKnowModal = () => {
         </>
       ) : (
         <div className="do_you_know_modal_loading">
-          <img src={Loading} alt="loading" />
+          <img src={Loading} alt="loading" loading="lazy" />
         </div>
       )}
     </div>
   );
 };
 
-export default React.memo(DoYouKnowModal);
+export default DoYouKnowModal;

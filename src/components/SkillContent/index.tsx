@@ -6,7 +6,7 @@ const SkillContent = (props: any) => {
   return (
     <div className={`skill_content_container ${title}`}>
       <div className="image">
-        <img src={image} alt={title} />
+        <img src={image} alt={title} loading="lazy" />
       </div>
       <div className="description">
         <div className="title">{title}</div>

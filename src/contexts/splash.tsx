@@ -15,8 +15,6 @@ export const SplashProvider = ({ children }: any) => {
     sessionStorage.getItem("isSplashShown") ? true : false
   );
 
-  console.log(isSplashShown, getCache("isSplashShown"));
-
   return (
     <SplashContext.Provider value={{ isSplashShown, setIsSplashShown }}>
       {children}
