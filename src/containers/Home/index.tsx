@@ -39,9 +39,12 @@ import BLImage9 from "../../assets/images/bl/bl9.png";
 import BLImage10 from "../../assets/images/bl/bl10.png";
 import BLImage11 from "../../assets/images/bl/bl11.png";
 
+// Styles
+import { HomeContainerDiv } from "./style";
+
 const Home = () => {
   return (
-    <div className="home_container">
+    <HomeContainerDiv>
       <Header />
       <Intro />
       <Skill title={"Skills I Accuire"}>
@@ -111,7 +114,7 @@ const Home = () => {
           ]}
         />
       </Projects>
-    </div>
+    </HomeContainerDiv>
   );
 };
 export default React.memo(Home);

@@ -25,7 +25,6 @@ import { AppWrapper } from "./GlobalStyle";
 // CSS
 import "../src/assets/css/App.css";
 import "../src/assets/css/Modal.css";
-import "../src/assets/css/Header.css";
 import "../src/assets/css/BottomTabBar.css";
 import "../src/assets/css/Intro.css";
 import "../src/assets/css/Skill.css";
@@ -51,7 +50,7 @@ function App() {
       <DoYouKnow />
       <BrowserRouter>
         <Routes>
-          {true || !splashContext?.isSplashShown ? (
+          {!splashContext?.isSplashShown ? (
             <Route path="/" caseSensitive={true} element={<SplashScreen />} />
           ) : (
             <>

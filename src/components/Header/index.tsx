@@ -7,6 +7,18 @@ import InfoContext from "../../contexts/info";
 // Images;
 import ProfileImage from "../../assets/images/logo.png";
 
+// Style
+import {
+  HeaderRootDiv,
+  HeaderLeftDiv,
+  HeaderLeftImageDiv,
+  HeaderLeftImage,
+  HeaderLeftTitleDiv,
+  HeaderRightDiv,
+  HeaderRightUl,
+  HeaderRightLi,
+} from "./style";
+
 const Header = () => {
   const infoContext = useContext(InfoContext);
   const navigate = useNavigate();
@@ -16,26 +28,27 @@ const Header = () => {
   };
 
   return (
-    <div className="header_root">
-      <div className="header_left">
-        <div className="header_left_img">
-          <img src={ProfileImage} alt="mdskrumi" loading="lazy" />
-        </div>
-        <div
-          className="header_left_title"
-          onClick={() => handleClickOnLink("/")}
-        >
+    <HeaderRootDiv>
+      <HeaderLeftDiv>
+        <HeaderLeftImageDiv>
+          <HeaderLeftImage src={ProfileImage} alt="mdskrumi" loading="lazy" />
+        </HeaderLeftImageDiv>
+        <HeaderLeftTitleDiv onClick={() => handleClickOnLink("/")}>
           {infoContext?.infoData.name}
-        </div>
-      </div>
-      <div className="header_right">
-        <ul>
-          <li onClick={() => handleClickOnLink("/")}>Home</li>
+        </HeaderLeftTitleDiv>
+      </HeaderLeftDiv>
+      <HeaderRightDiv>
+        <HeaderRightUl>
+          <HeaderRightLi onClick={() => handleClickOnLink("/")}>
+            Home
+          </HeaderRightLi>
 
-          <li onClick={() => handleClickOnLink("/contact-me")}>Contact Me</li>
-        </ul>
-      </div>
-    </div>
+          <HeaderRightLi onClick={() => handleClickOnLink("/contact-me")}>
+            Contact Me
+          </HeaderRightLi>
+        </HeaderRightUl>
+      </HeaderRightDiv>
+    </HeaderRootDiv>
   );
 };
 
