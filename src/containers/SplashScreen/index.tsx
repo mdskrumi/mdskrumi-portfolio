@@ -12,7 +12,12 @@ import { database } from "../../firebase/index";
 // Images;
 import Loading from "../../assets/images/loading.gif";
 
-export interface SplashScreenProps {}
+// Styles
+import {
+  SplashScreenDiv,
+  SplashScreenMsgPrimaryDiv,
+  SplashScreenMsgSecondaryDiv,
+} from "./style";
 
 const SplashScreen = () => {
   const [messages, setMessages] = useState<string[]>();
@@ -38,33 +43,33 @@ const SplashScreen = () => {
   }, []);
 
   return (
-    <animated.div className="splash__screen" style={{ ...styles }}>
+    <SplashScreenDiv as={animated.div} style={{ ...styles }}>
       {messages ? (
         <>
-          <div className="splash__screen__msg">
-            <div className="splash__screen__msg__1">
+          <div>
+            <SplashScreenMsgPrimaryDiv even={true}>
               {messages ? messages[0] : null}
-            </div>
-            <div className="splash__screen__msg__2">
+            </SplashScreenMsgPrimaryDiv>
+            <SplashScreenMsgPrimaryDiv even={false}>
               {messages ? messages[1] : null}
-            </div>
-            <div className="splash__screen__msg__3">
+            </SplashScreenMsgPrimaryDiv>
+            <SplashScreenMsgPrimaryDiv even={true}>
               {messages ? messages[2] : null}
-            </div>
-            <div className="splash__screen__msg__4">
+            </SplashScreenMsgPrimaryDiv>
+            <SplashScreenMsgPrimaryDiv even={false}>
               {messages ? messages[3] : null}
-            </div>
+            </SplashScreenMsgPrimaryDiv>
           </div>
-          <div className="splash__screen__msg__5">
+          <SplashScreenMsgSecondaryDiv>
             {messages ? messages[4] : null}
-          </div>
+          </SplashScreenMsgSecondaryDiv>
         </>
       ) : (
         <div>
           <img src={Loading} alt="loading" loading="lazy" />
         </div>
       )}
-    </animated.div>
+    </SplashScreenDiv>
   );
 };
 
