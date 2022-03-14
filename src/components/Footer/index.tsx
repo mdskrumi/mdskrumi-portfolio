@@ -10,6 +10,9 @@ import Facebook_Image from "../../assets/images/facebook.png";
 import LinkedIn_Image from "../../assets/images/linkedin.png";
 import GitHub_Image from "../../assets/images/github.png";
 
+// Styles
+import { FooterDiv, FooterMenuImage, FooterHrDiv, FooterEndDiv } from "./style";
+
 const Footer = () => {
   const [style1, toggle1] = useRaise(1, false);
   const [style2, toggle2] = useRaise(2, false);
@@ -32,18 +35,18 @@ const Footer = () => {
   };
 
   return (
-    <div className="footer">
-      <animated.img
+    <FooterDiv>
+      <FooterMenuImage
+        as={animated.img}
         style={typeof style1 === "object" ? style1 : {}}
-        className="footer_menu_image facebook"
         src={Facebook_Image}
         alt="facebook"
         loading="lazy"
         onClick={() => handleItemOnClick("https://www.facebook.com")}
       />
-      <animated.img
+      <FooterMenuImage
+        as={animated.img}
         style={typeof style2 === "object" ? style2 : {}}
-        className="footer_menu_image linkedin"
         src={LinkedIn_Image}
         alt="linkedin"
         loading="lazy"
@@ -52,24 +55,23 @@ const Footer = () => {
           handleItemOnClick("https://www.linkedin.com/")
         }
       />
-      <animated.img
+      <FooterMenuImage
+        as={animated.img}
         style={typeof style3 === "object" ? style3 : {}}
-        className="footer_menu_image github"
         src={GitHub_Image}
         alt="github"
         loading="lazy"
         onClick={() => handleItemOnClick("https://github.com/mdskrumi")}
       />
-      <img
-        className="footer_menu_image menu"
+      <FooterMenuImage
         src={Menu_Image}
         alt="menu"
         loading="lazy"
         onClick={handleOnMenuClick}
       />
-      <div className="custom_hr"></div>
-      <div className="footer_end"> © 2022 All rights reserved.</div>
-    </div>
+      <FooterHrDiv />
+      <FooterEndDiv> © 2022 All rights reserved.</FooterEndDiv>
+    </FooterDiv>
   );
 };
 
