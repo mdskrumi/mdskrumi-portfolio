@@ -1,12 +1,18 @@
 import React from "react";
 
+import {
+  ProjectContainerDiv,
+  ProjectContainerTitleDiv,
+  ProjectContentsDiv,
+} from "./style";
+
 const Projects = (props: any) => {
   const { title, children } = props;
   return (
-    <div className="project_container">
-      <div className="title">{title}</div>
-      <div className="project_contents">{children}</div>
-    </div>
+    <ProjectContainerDiv>
+      <ProjectContainerTitleDiv>{title}</ProjectContainerTitleDiv>
+      <ProjectContentsDiv>{children}</ProjectContentsDiv>
+    </ProjectContainerDiv>
   );
 };
 

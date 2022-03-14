@@ -1,4 +1,14 @@
 import React from "react";
+import {
+  ProjectContentContainerDiv,
+  ProjectContentContainerTitleDiv,
+  ProjectImagesDiv,
+  ProjectImagesImage,
+  ProjectWatchLiveDiv,
+  ProjectDescriptionDiv,
+  ProjectWatchLiveA,
+} from "./style";
+
 interface ProjectItemProps {
   title: string;
   link: string;
@@ -11,29 +21,24 @@ const ProjectItem = (props: ProjectItemProps) => {
   const { title, link, images, description, techs } = props;
 
   return (
-    <div className="project_content_container">
-      <div className="title">{title}</div>
-      <div className="project_decs">{description}</div>
-      <div className="project_decs project_used_techs">
+    <ProjectContentContainerDiv>
+      <ProjectContentContainerTitleDiv>{title}</ProjectContentContainerTitleDiv>
+      <ProjectDescriptionDiv>{description}</ProjectDescriptionDiv>
+      <ProjectDescriptionDiv>
         Technologies:{" "}
         {techs.map(
           (tech, index) => tech + (index < techs.length - 1 ? ", " : "")
         )}
-      </div>
-      <div className="project_images">
-        <div className="project_watch_live">
-          <a href={link} target="_blank" rel="noreferrer">
+      </ProjectDescriptionDiv>
+      <ProjectImagesDiv>
+        <ProjectWatchLiveDiv>
+          <ProjectWatchLiveA href={link} target="_blank" rel="noreferrer">
             Watch Live
-          </a>
-        </div>
-        <img
-          className={`${title}_project_image_${0}`}
-          src={images[0]}
-          alt={title}
-          loading="lazy"
-        />
-      </div>
-    </div>
+          </ProjectWatchLiveA>
+        </ProjectWatchLiveDiv>
+        <ProjectImagesImage src={images[0]} alt={title} loading="lazy" />
+      </ProjectImagesDiv>
+    </ProjectContentContainerDiv>
   );
 };
 
