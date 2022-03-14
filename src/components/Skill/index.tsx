@@ -1,12 +1,18 @@
 import React from "react";
 
+import {
+  SkillContainerDiv,
+  SkillContainerTitleDiv,
+  SkillContainerContentDiv,
+} from "./style";
+
 const Skill = (props: any) => {
-  const { title = "Default Title", children } = props;
+  const { title, children } = props;
   return (
-    <div className="skill_container">
-      <div className="title">{title}</div>
-      <div className="skill_contents">{children}</div>
-    </div>
+    <SkillContainerDiv>
+      <SkillContainerTitleDiv>{title}</SkillContainerTitleDiv>
+      <SkillContainerContentDiv>{children}</SkillContainerContentDiv>
+    </SkillContainerDiv>
   );
 };
 

@@ -1,18 +1,26 @@
 import React from "react";
 
+import {
+  SkillContentContainerDiv,
+  SkillImageDiv,
+  SkillDescriptionDiv,
+} from "./style";
+
+import { SkillContainerTitleDiv } from "../Skill/style";
+
 const SkillContent = (props: any) => {
   const { title, image } = props;
 
   return (
-    <div className={`skill_content_container ${title}`}>
-      <div className="image">
+    <SkillContentContainerDiv>
+      <SkillImageDiv>
         <img src={image} alt={title} loading="lazy" />
-      </div>
-      <div className="description">
-        <div className="title">{title}</div>
+      </SkillImageDiv>
+      <SkillDescriptionDiv>
+        <SkillContainerTitleDiv>{title}</SkillContainerTitleDiv>
         {/* <div className="skill_short_des"></div> */}
-      </div>
-    </div>
+      </SkillDescriptionDiv>
+    </SkillContentContainerDiv>
   );
 };
 
