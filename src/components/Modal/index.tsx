@@ -1,5 +1,6 @@
-import React from "react";
 import ReactDom from "react-dom";
+
+import { ModalBodyDiv, ModalContentDiv } from "./style";
 
 const Modal = (props: any) => {
   // console.log("__MODAL_PROPS__: ", props);
@@ -12,13 +13,12 @@ const Modal = (props: any) => {
       isModalOpen &&
       ReactDom.createPortal(
         <>
-          <div
-            className="modal_body"
+          <ModalBodyDiv
             onClick={() => {
               setIsModalOpen(false);
             }}
           />
-          <div className="modal_content">{children}</div>
+          <ModalContentDiv>{children}</ModalContentDiv>
         </>,
         ROOT_NODE
       )
