@@ -22,10 +22,6 @@ import { database } from "./firebase/index";
 // Styles
 import { AppWrapper } from "./GlobalStyle";
 
-// CSS
-import "../src/assets/css/App.css";
-import "../src/assets/css/ContactMe.css";
-
 function App() {
   const infoContext = useContext(InfoContext);
   const splashContext = useContext(SplashContext);

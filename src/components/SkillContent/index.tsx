@@ -18,7 +18,6 @@ const SkillContent = (props: any) => {
       </SkillImageDiv>
       <SkillDescriptionDiv>
         <SkillContainerTitleDiv>{title}</SkillContainerTitleDiv>
-        {/* <div className="skill_short_des"></div> */}
       </SkillDescriptionDiv>
     </SkillContentContainerDiv>
   );

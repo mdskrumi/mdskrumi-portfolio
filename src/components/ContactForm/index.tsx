@@ -7,6 +7,19 @@ import ThankYouModal from "../ThankYouModal";
 // Firebase
 import { writeContactMeData } from "../../firebase";
 
+// Styles
+import {
+  ContactFormRootDiv,
+  ContactFormPageTitleDiv,
+  ContactFormDiv,
+  ContactFormInputBatchDiv,
+  ContactFormInput,
+  ContactFormTextArea,
+  ContactFormMaxLenIndicatorDiv,
+  ContactFormSubmitDiv,
+  ContactFormSubmitButton,
+} from "./style";
+
 const ContactForm = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -76,10 +89,10 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="contact_form_root">
-        <div className="page_title">Contact Me</div>
-        <div className="contact_form">
-          <input
+      <ContactFormRootDiv>
+        <ContactFormPageTitleDiv>Contact Me</ContactFormPageTitleDiv>
+        <ContactFormDiv>
+          <ContactFormInput
             id="contact_name"
             ref={fn}
             type="text"
@@ -93,8 +106,8 @@ const ContactForm = () => {
               }
             }}
           />
-          <div className="input_batch">
-            <input
+          <ContactFormInputBatchDiv>
+            <ContactFormInput
               id="contact_email"
               ref={em}
               type="email"
@@ -108,7 +121,7 @@ const ContactForm = () => {
                 }
               }}
             />
-            <input
+            <ContactFormInput
               id="contact_phone_number"
               ref={pn}
               type="tel"
@@ -124,8 +137,8 @@ const ContactForm = () => {
                 }
               }}
             />
-          </div>
-          <textarea
+          </ContactFormInputBatchDiv>
+          <ContactFormTextArea
             id="contact_message"
             ref={msg}
             placeholder="Write Your Message"
@@ -139,16 +152,16 @@ const ContactForm = () => {
             }}
           />
           {maxLengthInd.max !== 0 ? (
-            <div className="max_length_indicator">{`${maxLengthInd.curr}/${maxLengthInd.max}`}</div>
+            <ContactFormMaxLenIndicatorDiv>{`${maxLengthInd.curr}/${maxLengthInd.max}`}</ContactFormMaxLenIndicatorDiv>
           ) : null}
-        </div>
+        </ContactFormDiv>
 
-        <div className="contact_submit">
-          <button className="button" onClick={onSubmitData}>
+        <ContactFormSubmitDiv>
+          <ContactFormSubmitButton onClick={onSubmitData}>
             Send
-          </button>
-        </div>
-      </div>
+          </ContactFormSubmitButton>
+        </ContactFormSubmitDiv>
+      </ContactFormRootDiv>
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
         <ThankYouModal />
       </Modal>

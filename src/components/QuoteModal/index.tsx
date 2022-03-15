@@ -4,6 +4,14 @@ import ReactTypingEffect from "react-typing-effect";
 // Images
 import Loading from "../../assets/images/loading.gif";
 
+import {
+  DoYouKnowModalDiv,
+  BodyDiv,
+  ModalLoadingDiv,
+  YearDiv,
+} from "../DoYouKnowModal/style";
+import { QuoteImageDiv } from "./style";
+
 const DoYouKnowModal = () => {
   const [quoteData, setQuoteData] = useState({
     author: null,
@@ -45,16 +53,16 @@ const DoYouKnowModal = () => {
   }, []);
 
   return (
-    <div className="do_you_know_modal">
+    <DoYouKnowModalDiv>
       {quoteData && image ? (
         <>
-          <div className="quote_image">
+          <QuoteImageDiv>
             {quoteData.author ? (
               <img src={image} alt={quoteData.author} loading="lazy" />
             ) : null}
-          </div>
-          <div className="year_div">{quoteData.author}</div>
-          <div className="body">
+          </QuoteImageDiv>
+          <YearDiv>{quoteData.author}</YearDiv>
+          <BodyDiv>
             {quoteData.content ? (
               <ReactTypingEffect
                 text={`"${quoteData.content}"`}
@@ -64,14 +72,14 @@ const DoYouKnowModal = () => {
                 eraseDelay={100000}
               />
             ) : null}
-          </div>
+          </BodyDiv>
         </>
       ) : (
-        <div className="do_you_know_modal_loading">
+        <ModalLoadingDiv>
           <img src={Loading} alt="loading" loading="lazy" />
-        </div>
+        </ModalLoadingDiv>
       )}
-    </div>
+    </DoYouKnowModalDiv>
   );
 };
 

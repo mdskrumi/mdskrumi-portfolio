@@ -1,11 +1,11 @@
-import React from "react";
+import { DoYouKnowModalDiv, TitleDiv, BodyDiv } from "../DoYouKnowModal/style";
 
 const ThankYouModal = () => {
   return (
-    <div className="do_you_know_modal">
-      <div className="title">Thank You</div>
-      <div className="body">You will be notified soon!!!</div>
-    </div>
+    <DoYouKnowModalDiv>
+      <TitleDiv>Thank You</TitleDiv>
+      <BodyDiv>You will be notified soon!!!</BodyDiv>
+    </DoYouKnowModalDiv>
   );
 };
 export default ThankYouModal;
