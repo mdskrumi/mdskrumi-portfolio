@@ -8,7 +8,10 @@ export interface ThemeContextInterface {
   setTheme: Function;
 }
 
-const ThemeContext = React.createContext<ThemeContextInterface | null>(null);
+const ThemeContext = React.createContext<ThemeContextInterface>({
+  theme: "",
+  setTheme: () => {},
+});
 
 export const ThemeProvider = ({ children }: any) => {
   const getTheme = useCallback(() => getCache("theme"), []);

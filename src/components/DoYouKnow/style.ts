@@ -10,7 +10,10 @@ export const DoYouKnowDiv = styled.div`
   width: 64px;
   -webkit-transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0);
-  filter: drop-shadow(0 0 1.75rem #ffffff);
+  filter: ${(props) =>
+    props.theme === "dark"
+      ? `drop-shadow(0 0 1.75rem #ffffff)`
+      : `drop-shadow(0 0 1.75rem #000000)`};
   z-index: 10;
 
   @media (max-width: 800px) {
@@ -39,6 +42,9 @@ export const DoYouKnowDiv = styled.div`
     transform: translate(-50%, -50%);
     width: 68px;
     -webkit-transform: translate(-50%, -50%);
-    filter: drop-shadow(0 0 1.75rem #9d9d9d);
+    filter: ${(props) =>
+      props.theme === "dark"
+        ? `drop-shadow(0 0 1.75rem #9d9d9d)`
+        : `drop-shadow(0 0 1.75rem #1c1c1c)`};
   }
 `;

@@ -1,6 +1,8 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useSpring, animated } from "react-spring";
+
+// Context
+import ThemeContext from "../../contexts/theme";
 
 // Custom Components
 import Modal from "../Modal";
@@ -14,6 +16,7 @@ import { DoYouKnowDiv } from "./style";
 
 const DoYouKnow = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { theme } = useContext(ThemeContext);
 
   const styles = useSpring({
     from: { x: -100 },
@@ -25,6 +28,7 @@ const DoYouKnow = () => {
     <>
       {!isModalOpen ? (
         <DoYouKnowDiv
+          theme={theme}
           as={animated.div}
           style={styles}
           onClick={() => {
