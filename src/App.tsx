@@ -24,7 +24,6 @@ import { AppWrapper } from "./GlobalStyle";
 
 // CSS
 import "../src/assets/css/App.css";
-import "../src/assets/css/BottomTabBar.css";
 import "../src/assets/css/ContactMe.css";
 
 function App() {

@@ -1,8 +1,14 @@
-.bottom__tab__bar {
+import styled from "styled-components";
+
+// export const name = styled.div`
+//   @media (max-width: 800px) {
+//   }
+// `;
+
+export const BottomTabBarDiv = styled.div`
   visibility: hidden;
-}
-@media screen and (max-width: 600px) {
-  .bottom__tab__bar {
+
+  @media (max-width: 600px) {
     visibility: visible;
     background-color: #222222;
     bottom: 0;
@@ -12,8 +18,10 @@
     padding: 0px;
     width: 100vw;
   }
+`;
 
-  .bottom__tab__bar ul {
+export const BottomTabBarUl = styled.ul`
+  @media (max-width: 600px) {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -22,8 +30,4 @@
     color: #ffffff;
     list-style: none;
   }
-
-  .bottom__tab__bar ul li + li {
-    margin: 0px;
-  }
-}
+`;

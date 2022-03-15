@@ -1,6 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+//styles
+
+import { BottomTabBarDiv, BottomTabBarUl } from "./style";
+
 const BottomTabBar = () => {
   const navigate = useNavigate();
 
@@ -8,12 +12,12 @@ const BottomTabBar = () => {
     navigate(path);
   };
   return (
-    <div className="bottom__tab__bar">
-      <ul>
+    <BottomTabBarDiv>
+      <BottomTabBarUl>
         <li onClick={() => handleClickOnLink("/")}>Home</li>
         <li onClick={() => handleClickOnLink("/contact-me")}>Contact Me</li>
-      </ul>
-    </div>
+      </BottomTabBarUl>
+    </BottomTabBarDiv>
   );
 };
 
