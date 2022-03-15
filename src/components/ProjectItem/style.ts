@@ -24,6 +24,7 @@ export const ProjectContentContainerDiv = styled.div`
 export const ProjectContentContainerTitleDiv = styled.div`
   padding-bottom: 2vh;
   font-size: 22px;
+  text-align: center;
 
   @media (max-width: 800px) {
     padding-bottom: 2vh;
