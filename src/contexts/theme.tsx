@@ -1,24 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Helpers
-import { getCache } from "../utils/storage";
+import { getCache, setCache } from "../utils/storage";
 
 export interface ThemeContextInterface {
-  isDarkThemeEnabled: boolean;
-  setIsDarkThemeEnabled: Function;
+  theme: string;
+  setTheme: Function;
 }
 
 const ThemeContext = React.createContext<ThemeContextInterface | null>(null);
 
 export const ThemeProvider = ({ children }: any) => {
-  const [isDarkThemeEnabled, setIsDarkThemeEnabled] = useState<boolean>(
-    getCache("isDarkThemeEnabled") || false
-  );
+  const getTheme = getCache("theme");
+  const [theme, setTheme] = useState<string>(getTheme || "");
+
+  useEffect(() => {
+    if (getTheme) {
+      setTheme(getTheme);
+    } else {
+      setTheme("dark");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (theme) {
+      setCache("theme", theme);
+    }
+  }, [theme]);
 
   return (
-    <ThemeContext.Provider
-      value={{ isDarkThemeEnabled, setIsDarkThemeEnabled }}
-    >
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );

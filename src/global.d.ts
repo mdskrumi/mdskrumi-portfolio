@@ -1,2 +1,6 @@
-declare module '*.pdf';
-declare module '*.mp3';
+declare module "*.pdf";
+declare module "*.mp3";
+
+interface ThemeInterface {
+  theme: string;
+}

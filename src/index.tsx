@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 // Context
 import { InfoProvider } from "./contexts/info";
 import { SplashProvider } from "./contexts/splash";
+import { ThemeProvider } from "./contexts/theme";
 
 // Styles
 import GlobalStyle from "./GlobalStyle";
@@ -15,8 +16,10 @@ ReactDOM.render(
   <React.StrictMode>
     <SplashProvider>
       <InfoProvider>
-        <GlobalStyle />
-        <App />
+        <ThemeProvider>
+          <GlobalStyle />
+          <App />
+        </ThemeProvider>
       </InfoProvider>
     </SplashProvider>
   </React.StrictMode>,

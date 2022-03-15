@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { animated } from "react-spring";
+
+// Context
+import ThemeContext from "../../contexts/theme";
 
 // hooks
 import useRaise from "../../Hooks/useRaise";
@@ -9,14 +12,18 @@ import Menu_Image from "../../assets/images/menu.png";
 import Facebook_Image from "../../assets/images/facebook.png";
 import LinkedIn_Image from "../../assets/images/linkedin.png";
 import GitHub_Image from "../../assets/images/github.png";
+import Brush_Image from "../../assets/images/brush.png";
 
 // Styles
 import { FooterDiv, FooterMenuImage, FooterHrDiv, FooterEndDiv } from "./style";
 
 const Footer = () => {
+  const themeContext = useContext(ThemeContext);
+
   const [style1, toggle1] = useRaise(1, false);
   const [style2, toggle2] = useRaise(2, false);
   const [style3, toggle3] = useRaise(3, false);
+  const [style4, toggle4] = useRaise(4, false);
 
   const handleItemOnClick = (link: string) => {
     window.open(link, "_blank");
@@ -26,12 +33,22 @@ const Footer = () => {
     if (
       typeof toggle1 === "function" &&
       typeof toggle2 === "function" &&
+      typeof toggle4 === "function" &&
       typeof toggle3 === "function"
     ) {
       toggle1();
       toggle2();
       toggle3();
+      toggle4();
     }
+  };
+
+  const handleThemeChange = () => {
+    themeContext?.setTheme((theme: string) => {
+      if (theme === "dark") {
+        return "light";
+      } else return "dark";
+    });
   };
 
   return (
@@ -63,6 +80,16 @@ const Footer = () => {
         loading="lazy"
         onClick={() => handleItemOnClick("https://github.com/mdskrumi")}
       />
+
+      <FooterMenuImage
+        as={animated.img}
+        style={typeof style4 === "object" ? style4 : {}}
+        src={Brush_Image}
+        alt="theme"
+        loading="lazy"
+        onClick={handleThemeChange}
+      />
+
       <FooterMenuImage
         src={Menu_Image}
         alt="menu"
