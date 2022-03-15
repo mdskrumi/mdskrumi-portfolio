@@ -11,12 +11,15 @@ export const SplashScreenDiv = styled.div`
   height: 100vh;
   justify-content: center;
   width: 100vw;
-  color: #ffffff;
+  color: ${(props) => (props.theme === "dark" ? "#ffffff" : "#000000")};
 `;
 
 export const SplashScreenMsgPrimaryDiv = styled.div<SplashScreenMsgPrimaryDivProps>`
   padding: 10px;
-  text-shadow: 0px 0px 24px #ffffff, 0px 0px 24px #ffffff, 0px 0px 24px #ffffff;
+  text-shadow: ${(props) =>
+    props.theme === "dark"
+      ? "0px 0px 24px #ffffff, 0px 0px 24px #ffffff, 0px 0px 24px #ffffff"
+      : "0px 0px 24px #000000, 0px 0px 24px #000000, 0px 0px 24px #000000"};
   font-size: 48px;
   margin-left: ${(props) => (props.even ? "-10%" : "10%")};
   text-align: ${(props) => (props.even ? "left" : "right")};
@@ -36,7 +39,10 @@ export const SplashScreenMsgPrimaryDiv = styled.div<SplashScreenMsgPrimaryDivPro
 
 export const SplashScreenMsgSecondaryDiv = styled.div`
   width: 100vw;
-  text-shadow: 0px 0px 24px #ffffff, 0px 0px 24px #ffffff, 0px 0px 24px #ffffff;
+  text-shadow: ${(props) =>
+    props.theme === "dark"
+      ? "0px 0px 24px #ffffff, 0px 0px 24px #ffffff, 0px 0px 24px #ffffff"
+      : "0px 0px 24px #000000, 0px 0px 24px #000000, 0px 0px 24px #000000"};
   text-align: center;
   font-size: 24px;
 

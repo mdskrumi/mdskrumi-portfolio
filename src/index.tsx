@@ -9,15 +9,11 @@ import { InfoProvider } from "./contexts/info";
 import { SplashProvider } from "./contexts/splash";
 import { ThemeProvider } from "./contexts/theme";
 
-// Styles
-import GlobalStyle from "./GlobalStyle";
-
 ReactDOM.render(
   <React.StrictMode>
     <SplashProvider>
       <InfoProvider>
         <ThemeProvider>
-          <GlobalStyle />
           <App />
         </ThemeProvider>
       </InfoProvider>

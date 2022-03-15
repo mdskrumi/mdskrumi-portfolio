@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 
 // Custom Component
 import Modal from "../Modal";
@@ -6,6 +6,8 @@ import ThankYouModal from "../ThankYouModal";
 
 // Firebase
 import { writeContactMeData } from "../../firebase";
+
+import ThemeContext from "../../contexts/theme";
 
 // Styles
 import {
@@ -21,6 +23,8 @@ import {
 } from "./style";
 
 const ContactForm = () => {
+  const { theme } = useContext(ThemeContext);
+
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -93,6 +97,7 @@ const ContactForm = () => {
         <ContactFormPageTitleDiv>Contact Me</ContactFormPageTitleDiv>
         <ContactFormDiv>
           <ContactFormInput
+            theme={theme}
             id="contact_name"
             ref={fn}
             type="text"
@@ -108,6 +113,7 @@ const ContactForm = () => {
           />
           <ContactFormInputBatchDiv>
             <ContactFormInput
+              theme={theme}
               id="contact_email"
               ref={em}
               type="email"
@@ -122,6 +128,7 @@ const ContactForm = () => {
               }}
             />
             <ContactFormInput
+              theme={theme}
               id="contact_phone_number"
               ref={pn}
               type="tel"
@@ -139,6 +146,7 @@ const ContactForm = () => {
             />
           </ContactFormInputBatchDiv>
           <ContactFormTextArea
+            theme={theme}
             id="contact_message"
             ref={msg}
             placeholder="Write Your Message"
@@ -156,8 +164,8 @@ const ContactForm = () => {
           ) : null}
         </ContactFormDiv>
 
-        <ContactFormSubmitDiv>
-          <ContactFormSubmitButton onClick={onSubmitData}>
+        <ContactFormSubmitDiv theme={theme}>
+          <ContactFormSubmitButton theme={theme} onClick={onSubmitData}>
             Send
           </ContactFormSubmitButton>
         </ContactFormSubmitDiv>

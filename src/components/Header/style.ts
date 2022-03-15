@@ -46,7 +46,14 @@ export const HeaderLeftTitleDiv = styled.div`
   cursor: pointer;
 
   &:hover {
-    color: #ffffff;
+    color: ${(props) => {
+      switch (props.theme) {
+        case "dark":
+          return "#ffffff";
+        case "light":
+          return "#000000";
+      }
+    }};
     text-shadow: 0px 0px 24px #000000, 0px 0px 24px #000000;
     font-family: "Lobster", cursive;
   }
@@ -74,7 +81,14 @@ export const HeaderRightUl = styled.ul`
 export const HeaderRightLi = styled.li`
   width: 80px;
   &:hover {
-    color: #ffffff;
+    color: ${(props) => {
+      switch (props.theme) {
+        case "dark":
+          return "#ffffff";
+        case "light":
+          return "#000000";
+      }
+    }};
     text-shadow: 0px 0px 24px #000000, 0px 0px 24px #000000;
     font-family: "Lobster", cursive;
   }

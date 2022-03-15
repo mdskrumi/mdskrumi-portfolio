@@ -18,7 +18,7 @@ import Brush_Image from "../../assets/images/brush.png";
 import { FooterDiv, FooterMenuImage, FooterHrDiv, FooterEndDiv } from "./style";
 
 const Footer = () => {
-  const themeContext = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const [style1, toggle1] = useRaise(1, false);
   const [style2, toggle2] = useRaise(2, false);
@@ -44,7 +44,7 @@ const Footer = () => {
   };
 
   const handleThemeChange = () => {
-    themeContext?.setTheme((theme: string) => {
+    setTheme((theme: string) => {
       if (theme === "dark") {
         return "light";
       } else return "dark";
@@ -54,6 +54,7 @@ const Footer = () => {
   return (
     <FooterDiv>
       <FooterMenuImage
+        theme={theme}
         as={animated.img}
         style={typeof style1 === "object" ? style1 : {}}
         src={Facebook_Image}
@@ -62,6 +63,7 @@ const Footer = () => {
         onClick={() => handleItemOnClick("https://www.facebook.com")}
       />
       <FooterMenuImage
+        theme={theme}
         as={animated.img}
         style={typeof style2 === "object" ? style2 : {}}
         src={LinkedIn_Image}
@@ -73,6 +75,7 @@ const Footer = () => {
         }
       />
       <FooterMenuImage
+        theme={theme}
         as={animated.img}
         style={typeof style3 === "object" ? style3 : {}}
         src={GitHub_Image}
@@ -82,6 +85,7 @@ const Footer = () => {
       />
 
       <FooterMenuImage
+        theme={theme}
         as={animated.img}
         style={typeof style4 === "object" ? style4 : {}}
         src={Brush_Image}
@@ -91,13 +95,14 @@ const Footer = () => {
       />
 
       <FooterMenuImage
+        theme={theme}
         src={Menu_Image}
         alt="menu"
         loading="lazy"
         onClick={handleOnMenuClick}
       />
-      <FooterHrDiv />
-      <FooterEndDiv> © 2022 All rights reserved.</FooterEndDiv>
+      <FooterHrDiv theme={theme} />
+      <FooterEndDiv theme={theme}> © 2022 All rights reserved.</FooterEndDiv>
     </FooterDiv>
   );
 };

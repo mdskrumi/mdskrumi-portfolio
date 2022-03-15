@@ -5,6 +5,7 @@ import { animated, useSpring } from "react-spring";
 
 // Context
 import SplashContext from "../../contexts/splash";
+import ThemeContext from "../../contexts/theme";
 
 // Firebase
 import { database } from "../../firebase/index";
@@ -22,6 +23,7 @@ import {
 const SplashScreen = () => {
   const [messages, setMessages] = useState<string[]>();
   const splashContext = useContext(SplashContext);
+  const { theme } = useContext(ThemeContext);
 
   const styles = useSpring({
     from: { opacity: 1 },
@@ -43,24 +45,24 @@ const SplashScreen = () => {
   }, []);
 
   return (
-    <SplashScreenDiv as={animated.div} style={{ ...styles }}>
+    <SplashScreenDiv theme={theme} as={animated.div} style={{ ...styles }}>
       {messages ? (
         <>
           <div>
-            <SplashScreenMsgPrimaryDiv even={true}>
+            <SplashScreenMsgPrimaryDiv theme={theme} even={true}>
               {messages ? messages[0] : null}
             </SplashScreenMsgPrimaryDiv>
-            <SplashScreenMsgPrimaryDiv even={false}>
+            <SplashScreenMsgPrimaryDiv theme={theme} even={false}>
               {messages ? messages[1] : null}
             </SplashScreenMsgPrimaryDiv>
-            <SplashScreenMsgPrimaryDiv even={true}>
+            <SplashScreenMsgPrimaryDiv theme={theme} even={true}>
               {messages ? messages[2] : null}
             </SplashScreenMsgPrimaryDiv>
-            <SplashScreenMsgPrimaryDiv even={false}>
+            <SplashScreenMsgPrimaryDiv theme={theme} even={false}>
               {messages ? messages[3] : null}
             </SplashScreenMsgPrimaryDiv>
           </div>
-          <SplashScreenMsgSecondaryDiv>
+          <SplashScreenMsgSecondaryDiv theme={theme}>
             {messages ? messages[4] : null}
           </SplashScreenMsgSecondaryDiv>
         </>

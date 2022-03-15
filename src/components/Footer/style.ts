@@ -10,8 +10,22 @@ export const FooterDiv = styled.div`
 `;
 
 export const FooterMenuImage = styled.img`
-  background-color: #ffffff;
-  filter: drop-shadow(0 0 7.5px #ffffff);
+  background-color: ${(props) => {
+    switch (props.theme) {
+      case "dark":
+        return "#ffffff";
+      case "light":
+        return "#ffffff";
+    }
+  }};
+  filter: ${(props) => {
+    switch (props.theme) {
+      case "dark":
+        return "drop-shadow(0 0 7.5px #ffffff)";
+      case "light":
+        return "drop-shadow(0 0 7.5px #000000)";
+    }
+  }};
   border-radius: 24px;
   height: 48px;
   width: 48px;
@@ -33,7 +47,14 @@ export const FooterHrDiv = styled.div`
 `;
 
 export const FooterEndDiv = styled.div`
-  color: #ffffff;
+  color: ${(props) => {
+    switch (props.theme) {
+      case "dark":
+        return "#ffffff";
+      case "light":
+        return "#000000";
+    }
+  }};
   padding: 15px;
   text-align: center;
   @media (max-width: 600px) {

@@ -5,6 +5,7 @@ import { ref, onValue } from "firebase/database";
 // Context
 import InfoContext from "./contexts/info";
 import SplashContext from "./contexts/splash";
+import ThemeContext from "./contexts/theme";
 
 // Container
 import SplashScreen from "./containers/SplashScreen";
@@ -20,11 +21,12 @@ import Footer from "./components/Footer";
 import { database } from "./firebase/index";
 
 // Styles
-import { AppWrapper } from "./GlobalStyle";
+import GlobalStyle, { AppWrapper } from "./GlobalStyle";
 
 function App() {
   const infoContext = useContext(InfoContext);
   const splashContext = useContext(SplashContext);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     const infoRef = ref(database, "info/");
@@ -36,7 +38,8 @@ function App() {
   }, []);
 
   return (
-    <AppWrapper>
+    <AppWrapper theme={theme}>
+      <GlobalStyle theme={theme} />
       <DoYouKnow />
       <BrowserRouter>
         <Routes>

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 // Contexts
 import InfoContext from "../../contexts/info";
+import ThemeContext from "../../contexts/theme";
 
 // Custom Components
 import Modal from "../Modal";
@@ -26,6 +27,7 @@ import {
 
 const Intro = () => {
   const infoContext = useContext(InfoContext);
+  const { theme } = useContext(ThemeContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClickOnDownloadResume = () => {
@@ -63,10 +65,16 @@ const Intro = () => {
           </IntroDescriptionDiv>
 
           <IntroActionsDiv>
-            <IntroSingleActionDiv onClick={handleClickOnDownloadResume}>
+            <IntroSingleActionDiv
+              theme={theme}
+              onClick={handleClickOnDownloadResume}
+            >
               Download Resume
             </IntroSingleActionDiv>
-            <IntroSingleActionDiv onClick={() => setIsModalOpen(true)}>
+            <IntroSingleActionDiv
+              theme={theme}
+              onClick={() => setIsModalOpen(true)}
+            >
               Get A Quote
             </IntroSingleActionDiv>
           </IntroActionsDiv>

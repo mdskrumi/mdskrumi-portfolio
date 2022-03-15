@@ -95,7 +95,14 @@ export const IntroSingleActionDiv = styled.div`
   width: 200px;
 
   &:hover {
-    color: #ffffff;
+    color: ${(props) => {
+      switch (props.theme) {
+        case "dark":
+          return "#ffffff";
+        case "light":
+          return "#000000";
+      }
+    }};
     text-shadow: 0px 0px 24px #000000, 0px 0px 24px #000000;
     font-family: "Lobster", cursive;
   }

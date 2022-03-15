@@ -54,7 +54,14 @@ export const ContactFormInput = styled.input`
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
-  color: #ffffff;
+  color: ${(props) => {
+    switch (props.theme) {
+      case "dark":
+        return "#ffffff";
+      case "light":
+        return "#000000";
+    }
+  }};
   font-size: 24px;
   font-family: "Lobster Two", cursive;
   padding: 20px;
@@ -74,7 +81,14 @@ export const ContactFormTextArea = styled.textarea`
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
-  color: #ffffff;
+  color: ${(props) => {
+    switch (props.theme) {
+      case "dark":
+        return "#ffffff";
+      case "light":
+        return "#000000";
+    }
+  }};
   font-size: 24px;
   font-family: "Lobster Two", cursive;
   padding: 20px;
@@ -106,7 +120,14 @@ export const ContactFormSubmitDiv = styled.div`
 `;
 
 export const ContactFormSubmitButton = styled.button`
-  background-color: #222222;
+  background-color: ${(props) => {
+    switch (props.theme) {
+      case "dark":
+        return "#222222";
+      case "light":
+        return "#ffffff";
+    }
+  }};
   border: none;
   color: #0f0f0f;
   cursor: pointer;
@@ -116,7 +137,14 @@ export const ContactFormSubmitButton = styled.button`
   text-shadow: 0px 0px 24px #ffffff, 0px 0px 24px #ffffff, 0px 0px 24px #ffffff;
 
   &:hover {
-    color: #ffffff;
+    color: ${(props) => {
+      switch (props.theme) {
+        case "dark":
+          return "#ffffff";
+        case "light":
+          return "#000000";
+      }
+    }};
     text-shadow: 0px 0px 24px #000000, 0px 0px 24px #000000;
     font-family: "Lobster", cursive;
   }
