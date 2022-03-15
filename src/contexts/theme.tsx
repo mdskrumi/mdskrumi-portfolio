@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 // Helpers
 import { getCache, setCache } from "../utils/storage";
@@ -11,16 +11,16 @@ export interface ThemeContextInterface {
 const ThemeContext = React.createContext<ThemeContextInterface | null>(null);
 
 export const ThemeProvider = ({ children }: any) => {
-  const getTheme = getCache("theme");
-  const [theme, setTheme] = useState<string>(getTheme || "");
+  const getTheme = useCallback(() => getCache("theme"), []);
+  const [theme, setTheme] = useState<string>(getTheme() || "");
 
   useEffect(() => {
-    if (getTheme) {
-      setTheme(getTheme);
+    if (getTheme()) {
+      setTheme(getTheme());
     } else {
       setTheme("dark");
     }
-  }, []);
+  }, [getTheme]);
 
   useEffect(() => {
     if (theme) {
