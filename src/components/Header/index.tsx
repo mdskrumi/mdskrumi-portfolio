@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Contexts
-import InfoContext from "../../contexts/info";
 import ThemeContext from "../../contexts/theme";
 
 // Images;
