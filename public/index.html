@@ -13,15 +13,6 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- End Fonts -->
-
     <title>Md Sakibul Alam (mdskrumi)</title>
 
     <!-- Google Analytics -->
@@ -35,9 +26,9 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag('js', new Date());
+      gtag("js", new Date());
 
-      gtag('config', 'G-G1BVMZ7RC3');
+      gtag("config", "G-G1BVMZ7RC3");
     </script>
     <!-- End Google Analytics -->
   </head>
@@ -46,15 +37,15 @@
     <div id="root"></div>
     <div id="modal"></div>
     <script>
-      if ('serviceWorker' in window.navigator) {
-        window.addEventListener('load', () => {
+      if ("serviceWorker" in window.navigator) {
+        window.addEventListener("load", () => {
           navigator.serviceWorker
-            .register('./serviceworker.js')
+            .register("./serviceworker.js")
             .then((reg) => {
-              console.log('Success: ', reg.scope);
+              console.log("Success: ", reg.scope);
             })
             .catch((err) => {
-              console.log('Failed: ', err);
+              console.log("Failed: ", err);
             });
         });
       }

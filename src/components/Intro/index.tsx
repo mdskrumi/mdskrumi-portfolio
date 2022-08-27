@@ -1,14 +1,10 @@
 import React, { useState, useContext } from "react";
 // Contexts
-import InfoContext from "../../contexts/info";
 import ThemeContext from "../../contexts/theme";
 
 // Custom Components
 import Modal from "../Modal";
 import QuoteModal from "../QuoteModal";
-
-// Files;
-import RESUME from "../../assets/files/mdskrumi_resume.pdf";
 
 // Images
 import ReactTypingEffect from "react-typing-effect";
@@ -26,16 +22,8 @@ import {
 } from "./style";
 
 const Intro = () => {
-  const infoContext = useContext(InfoContext);
   const { theme } = useContext(ThemeContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleClickOnDownloadResume = () => {
-    const a: HTMLAnchorElement = document.createElement("a");
-    a.href = `${RESUME}`;
-    a.download = "mdskrumi_resume.pdf";
-    a.click();
-  };
 
   return (
     <>
@@ -46,29 +34,18 @@ const Intro = () => {
         <div>
           <IntroDetailsDesignationsDiv>
             <ReactTypingEffect
-              cursor={" "}
+              cursor={"_"}
               eraseSpeed={100}
               speed={100}
-              text={
-                infoContext?.infoData.designations
-                  ? infoContext?.infoData.designations
-                  : "Software Engineer"
-              }
+              text={"Software Engineer"}
               typingDelay={1000}
             />
           </IntroDetailsDesignationsDiv>
-          <IntroDetailsNameDiv>
-            {infoContext?.infoData.name}
-          </IntroDetailsNameDiv>
-          <IntroDescriptionDiv>
-            {infoContext?.infoData.intro}
-          </IntroDescriptionDiv>
+          <IntroDetailsNameDiv>Nmae</IntroDetailsNameDiv>
+          <IntroDescriptionDiv>intro</IntroDescriptionDiv>
 
           <IntroActionsDiv>
-            <IntroSingleActionDiv
-              theme={theme}
-              onClick={handleClickOnDownloadResume}
-            >
+            <IntroSingleActionDiv theme={theme}>
               Download Resume
             </IntroSingleActionDiv>
             <IntroSingleActionDiv

@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 
 // Contexts
 import ThemeContext from "../../contexts/theme";
 
 // Images;
 import ProfileImage from "../../assets/images/logo.png";
-import ProfileImagedark from "../../assets/images/logo-dark.png";
 
 // Style
 import {
@@ -18,45 +16,37 @@ import {
   HeaderRightDiv,
   HeaderRightUl,
   HeaderRightLi,
+  HeaderRightMenu,
+  MenuIcon,
 } from "./style";
 
-const Header = () => {
-  const infoContext = useContext(InfoContext);
-  const { theme } = useContext(ThemeContext);
-  const navigate = useNavigate();
+// Data
+import { data } from "../../assets/data";
 
-  const handleClickOnLink = (path: string) => {
-    navigate(path);
-  };
+const Header = () => {
+  const { theme } = useContext(ThemeContext);
 
   return (
     <HeaderRootDiv>
       <HeaderLeftDiv>
         <HeaderLeftImageDiv>
-          <HeaderLeftImage
-            src={theme === "dark" ? ProfileImage : ProfileImagedark}
-            alt="mdskrumi"
-            loading="lazy"
-          />
+          <HeaderLeftImage src={ProfileImage} alt="mdskrumi" loading="lazy" />
         </HeaderLeftImageDiv>
-        <HeaderLeftTitleDiv
-          theme={theme}
-          onClick={() => handleClickOnLink("/")}
-        >
-          {infoContext?.infoData.name}
-        </HeaderLeftTitleDiv>
+        <HeaderLeftTitleDiv theme={theme}>{data.name}</HeaderLeftTitleDiv>
       </HeaderLeftDiv>
       <HeaderRightDiv>
         <HeaderRightUl>
-          <HeaderRightLi onClick={() => handleClickOnLink("/")}>
-            Home
-          </HeaderRightLi>
-
-          <HeaderRightLi onClick={() => handleClickOnLink("/contact-me")}>
-            Contact Me
-          </HeaderRightLi>
+          <HeaderRightLi>About</HeaderRightLi>
+          <HeaderRightLi>Skills</HeaderRightLi>
+          <HeaderRightLi>Experience</HeaderRightLi>
+          <HeaderRightLi>Work</HeaderRightLi>
+          <HeaderRightLi>Achievement</HeaderRightLi>
         </HeaderRightUl>
       </HeaderRightDiv>
+
+      <HeaderRightMenu>
+        <MenuIcon />
+      </HeaderRightMenu>
     </HeaderRootDiv>
   );
 };

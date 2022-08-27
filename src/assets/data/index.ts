@@ -112,4 +112,6 @@ export const data = {
       to: "2020",
     },
   ],
+  resume_link:
+    "https://drive.google.com/file/d/181Po7TYWKJP-FZYyrsGus0dEYYioW2PT/view?usp=sharing",
 };

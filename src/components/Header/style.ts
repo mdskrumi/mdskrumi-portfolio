@@ -1,85 +1,60 @@
 import styled from "styled-components";
 
 export const HeaderRootDiv = styled.div`
-  justify-content: space-between;
+  position: fixed;
+  height: 3rem;
+  background-color: #121916;
+  width: 100%;
+  justify-content: space-around;
   display: flex;
-  padding: 20px 30px 10px 20px;
-
-  @media (max-width: 600px) {
-    padding: 20px 0px 10px 0px;
-  }
+  padding: 10px 0px 10px 0px;
+  margin: auto;
+  border-bottom: 2px #202020 solid;
+  align-items: center;
 `;
 
-export const HeaderLeftDiv = styled(HeaderRootDiv)`
+export const HeaderLeftDiv = styled.div`
   align-items: center;
   display: flex;
-
-  @media (max-width: 600px) {
-    display: block;
-    text-align: center;
-    width: 100vw;
-  }
 `;
 
 export const HeaderLeftImageDiv = styled.div`
-  height: 48px;
-  width: 48px;
+  margin-right: 1rem;
   cursor: default;
-
-  @media (max-width: 600px) {
-    display: block;
-    text-align: center;
-    width: 100vw;
-    padding-bottom: 5px;
-  }
 `;
 
 export const HeaderLeftImage = styled.img`
-  height: 48px;
-  width: 48px;
-  cursor: default;
+  height: 42px;
+  width: 42px;
+  cursor: pointer;
 `;
 
 export const HeaderLeftTitleDiv = styled.div`
   font-size: 24px;
-  margin: 0px 0px 0px 0.75vw;
   cursor: pointer;
-
   &:hover {
-    color: ${(props) => {
-      switch (props.theme) {
-        case "dark":
-          return "#ffffff";
-        case "light":
-          return "#000000";
-      }
-    }};
-    text-shadow: 0px 0px 24px #000000, 0px 0px 24px #000000;
-    font-family: "Lobster", cursive;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 26px;
-    margin: 0px;
+    font-family: "Courier New", Courier, monospace;
   }
 `;
 
 export const HeaderRightDiv = styled.div`
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     display: none;
   }
 `;
 
 export const HeaderRightUl = styled.ul`
-  align-items: center;
   display: flex;
-  font-size: 18px;
   list-style: none;
   cursor: pointer;
+
+  li + li {
+    margin-left: 1.5rem;
+  }
 `;
 
 export const HeaderRightLi = styled.li`
-  width: 80px;
+  flex-shrink: 0;
   &:hover {
     color: ${(props) => {
       switch (props.theme) {
@@ -89,7 +64,14 @@ export const HeaderRightLi = styled.li`
           return "#000000";
       }
     }};
-    text-shadow: 0px 0px 24px #000000, 0px 0px 24px #000000;
-    font-family: "Lobster", cursive;
+    font-family: "Courier New", Courier, monospace;
   }
 `;
+
+export const HeaderRightMenu = styled.div`
+  @media (min-width: 800px) {
+    display: none;
+  }
+`;
+
+export const MenuIcon = styled.img``;

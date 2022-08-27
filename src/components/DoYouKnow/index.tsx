@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import { useSpring, animated } from "react-spring";
 
 // Context
 import ThemeContext from "../../contexts/theme";
@@ -18,19 +17,11 @@ const DoYouKnow = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
 
-  const styles = useSpring({
-    from: { x: -100 },
-    to: { x: -25 },
-    delay: 5000,
-  });
-
   return (
     <>
       {!isModalOpen ? (
         <DoYouKnowDiv
           theme={theme}
-          as={animated.div}
-          style={styles}
           onClick={() => {
             setIsModalOpen(true);
           }}

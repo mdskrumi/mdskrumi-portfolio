@@ -8,6 +8,7 @@ body {
   margin: 0px;
   padding: 0px;
   max-width: 100vw;
+  scroll-behavior: smooth;
   overflow-x: hidden;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -47,28 +48,27 @@ export const AppWrapper = styled.div`
   background-color: ${(props) => {
     switch (props.theme) {
       case "dark":
-        return "#222222";
+        return "#121916";
       case "light":
-        return "#ffffff";
+        return "#b4b4b4";
     }
   }};
   color: ${(props) => {
     switch (props.theme) {
       case "dark":
-        return "#0f0f0f";
+        return "#ffffff";
       case "light":
         return "#000000";
     }
   }};
-  /* font-family: "Lobster", cursive; */
-  font-family: "Lobster Two", cursive;
+  font-family: monospace, "Courier New", Courier;
   margin: auto;
   max-width: 1920px;
   min-height: 100vh;
   text-shadow: ${(props) => {
     switch (props.theme) {
       case "dark":
-        return "0px 0px 24px #ffffff, 0px 0px 24px #ffffff, 0px 0px 24px #ffffff";
+        return "0px 0px 24px #000000, 0px 0px 24px #000000, 0px 0px 24px #000000";
       case "light":
         return "0px 0px 24px #ffffff, 0px 0px 24px #ffffff, 0px 0px 24px #ffffff";
     }
